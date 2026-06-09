@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plumb5 Healthcare - Patient Engagement & Appointment Conversions</title>
+
+  <!-- Google Fonts: Inter & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS3 Stylesheets -->
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body class="bg-brand-bg text-brand-text">
+
+  <!-- 1. Viewport Progress Indicator Bar -->
+  <!-- <div id="scroll-progress-bar"></div> -->
+
+  <!-- 2. Floating Demonstration Automation Notification Toast -->
+  <div id="demo-notification" class="glass-toast shadow-2xl d-flex align-items-start gap-3 p-3">
+    <div
+      class="toast-icon d-flex align-items-center justify-content-center bg-emerald-light text-emerald rounded-circle shrink-0">
+      <i data-lucide="check-circle-2"></i>
+    </div>
+    <div class="toast-body flex-grow-1 text-start">
+      <p class="font-heading fw-bold text-dark-slate mb-0">Conversion Automated!</p>
+      <p class="text-secondary-slate sm-text leading-normal mt-1 mb-0">
+        Plumb5 caught a new hospital enquiry and scheduled subsequent WhatsApp follow-ups.
+      </p>
+    </div>
+    <button id="close-toast-btn" class="close-btn border-0 bg-transparent text-secondary-slate"
+      aria-label="Close notification">
+      <i data-lucide="x"></i>
+    </button>
+  </div>
+
+  <!-- 3. Sticky Bottom Mobile Consultation Anchor Bar -->
+  <div id="mobile-sticky-bar"
+    class="d-md-none fixed-bottom bg-white border-top border-slate-200/65 py-2 px-3 d-flex align-items-center justify-content-between z-40">
+    <div class="text-start">
+      <div class="font-heading fw-bold text-slate-900 small">Book My Slot</div>
+      <div class="text-muted xs-text fw-semibold">Free Conversion Audit</div>
+    </div>
+    <button onclick="scrollToSection('lead-form-section')"
+      class="btn btn-premium px-3 py-2 btn-sm rounded-pill hover-scale">
+      Book Consultation
+    </button>
+  </div>
+
+  <!-- 4. Premium Header Section -->
+  <header id="main-header" class="premium-header fixed-top d-flex align-items-center justify-content-between">
+    <!-- Plumb5 Healthcare Logo -->
+    <div class="logo-wrapper d-flex align-items-center cursor-pointer select-none"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+      <img src="assets/images/logo.png" alt="Plumb5 Logo" class="header-logo-img" />
+    </div>
+
+    <!-- CTA Button only -->
+    <button onclick="scrollToSection('lead-form-section')" class="btn premium-header-btn">
+      Book Consultation
+    </button>
+  </header>
+
+  <main>
+    <!-- 5. Premium Healthcare Hero Section -->
+    <section class="premium-hero" id="premium-hero-section">
+      <!-- Full-screen Hero Image -->
+      <img src="assets/images/hero-indian-doctor.png" alt="Indian Healthcare Excellence" class="premium-hero-bg" />
+
+      <!-- Premium Soft Gradients & Glows -->
+      <div class="premium-overlay-gradient"></div>
+      <div class="premium-glow-white"></div>
+      <div class="premium-glow-teal"></div>
+      <div class="premium-glow-blue"></div>
+
+      <div class="container h-100 position-relative z-10 px-4 px-md-5 max-w-7xl mx-auto d-flex align-items-center">
+        <div class="row w-100 align-items-center">
+
+          <!-- Headline Area -->
+          <div class="col-12 col-lg-6 text-white text-start premium-hero-text-col">
+            <div class="premium-hero-badge">
+              <i data-lucide="hospital"></i> Built for Hospitals, Clinics &amp; Healthcare Groups
+            </div>
+            <h1 class="premium-hero-headline font-heading fw-bold">
+              Improve <span class="premium-text-accent">Patient Engagement</span>
+              with <span class="premium-text-accent">Intelligent Automation</span>
+            </h1>
+            <p class="premium-hero-subtext font-sans fw-light">
+              Capture, nurture, and convert patient enquiries through automated
+              healthcare engagement workflows.
+            </p>
+            <div class="hero-cta-wrapper mt-4 pt-2">
+              <button onclick="scrollToSection('lead-form-section')"
+                class="btn btn-premium-hero shadow-xl d-inline-flex align-items-center gap-3">
+                Book My Healthcare Growth Consultation
+                <i data-lucide="arrow-right" class="hero-icon-right animate-pulse-icon"></i>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Floating Healthcare Cards (Glassmorphism) -->
+          <div class="col-lg-6 position-relative hero-cards-container select-none">
+
+            <!-- Card 1 -->
+            <div class="premium-glass-card p-card-1 animate-float-slow">
+              <div class="p-card-icon bg-teal-light text-teal">
+                <i data-lucide="check-circle-2"></i>
+              </div>
+              <div class="p-card-content">
+                <h6 class="font-heading fw-bold mb-0">Appointment Confirmed</h6>
+                <span class="font-sans fw-medium text-slate-500 mt-1">Patient notified successfully</span>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="premium-glass-card p-card-2 animate-float-delayed">
+              <div class="p-card-icon bg-blue-light text-blue">
+                <i data-lucide="calendar"></i>
+              </div>
+              <div class="p-card-content">
+                <h6 class="font-heading fw-bold mb-0">Consultation Scheduled</h6>
+                <span class="font-sans fw-medium text-slate-500 mt-1">Dr. Sharma • 10:30 AM</span>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="premium-glass-card p-card-3 animate-float-slow" style="animation-delay: 1.5s;">
+              <div class="p-card-icon bg-emerald-light text-emerald">
+                <i data-lucide="message-circle"></i>
+              </div>
+              <div class="p-card-content">
+                <h6 class="font-heading fw-bold mb-0">WhatsApp Follow-Up</h6>
+                <span class="font-sans fw-medium text-slate-500 mt-1">Post-consultation care sent</span>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="premium-glass-card p-card-4 animate-float-delayed" style="animation-delay: 2.5s;">
+              <div class="p-card-icon bg-accent-light text-accent">
+                <i data-lucide="activity"></i>
+              </div>
+              <div class="p-card-content">
+                <h6 class="font-heading fw-bold mb-0">Patient Journey Tracked</h6>
+                <span class="font-sans fw-medium text-slate-500 mt-1">Active Engagement Phase</span>
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="premium-glass-card p-card-5 animate-float-slow" style="animation-delay: 3s;">
+              <div class="p-card-icon bg-teal-light text-teal">
+                <i data-lucide="trending-up"></i>
+              </div>
+              <div class="p-card-content">
+                <h6 class="font-heading fw-bold mb-0">Conversion Growth</h6>
+                <span class="font-sans fw-medium text-slate-500 mt-1">+42% OP Consults</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Pain Points Section -->
+    <section class="py-5 bg-slate-50 border-bottom border-slate-200">
+      <div class="container px-4 px-md-5 py-4 max-w-7xl mx-auto">
+
+        <!-- Header Block -->
+        <div class="text-center max-w-md mx-auto mb-5">
+          <span
+            class="d-inline-flex align-items-center gap-2 px-3 py-1 bg-red-light text-red rounded-pill fw-bold uppercase tracking-wider xs-text">
+            <i data-lucide="alert-circle"></i> High Leaks Identified
+          </span>
+          <h2 class="font-heading fw-extrabold text-slate-800 mt-3 fs-3 fs-md-2">
+            Why Patient Enquiries Fail to Convert
+          </h2>
+          <div class="mx-auto mt-3 divider-line bg-red-heavy rounded-pill"></div>
+        </div>
+
+        <!-- Six Grid Cards Block -->
+        <div class="row g-4 justify-content-center">
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="pain-card h-100 bg-white p-4 rounded-4 border border-slate-200 shadow-sm transition">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="card-icon d-flex align-items-center justify-content-center rounded-3 bg-red-light text-red">
+                  <i data-lucide="alert-circle"></i>
+                </div>
+                <span class="font-mono fw-bold text-slate-400 small opacity-60">01</span>
+              </div>
+              <p class="font-heading fw-semibold text-slate-800 text-start text-sm leading-relaxed mb-0">
+                Patient enquiries are missed or followed up too late
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="pain-card h-100 bg-white p-4 rounded-4 border border-slate-200 shadow-sm transition">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="card-icon d-flex align-items-center justify-content-center rounded-3 bg-red-light text-red">
+                  <i data-lucide="alert-circle"></i>
+                </div>
+                <span class="font-mono fw-bold text-slate-400 small opacity-60">02</span>
+              </div>
+              <p class="font-heading fw-semibold text-slate-800 text-start text-sm leading-relaxed mb-0">
+                Appointment bookings drop due to inconsistent engagement
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="pain-card h-100 bg-white p-4 rounded-4 border border-slate-200 shadow-sm transition">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="card-icon d-flex align-items-center justify-content-center rounded-3 bg-red-light text-red">
+                  <i data-lucide="alert-circle"></i>
+                </div>
+                <span class="font-mono fw-bold text-slate-400 small opacity-60">03</span>
+              </div>
+              <p class="font-heading fw-semibold text-slate-800 text-start text-sm leading-relaxed mb-0">
+                Front-office teams struggle to manage enquiry volumes
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="pain-card h-100 bg-white p-4 rounded-4 border border-slate-200 shadow-sm transition">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="card-icon d-flex align-items-center justify-content-center rounded-3 bg-red-light text-red">
+                  <i data-lucide="alert-circle"></i>
+                </div>
+                <span class="font-mono fw-bold text-slate-400 small opacity-60">04</span>
+              </div>
+              <p class="font-heading fw-semibold text-slate-800 text-start text-sm leading-relaxed mb-0">
+                Healthcare campaigns generate leads but not consultations
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="pain-card h-100 bg-white p-4 rounded-4 border border-slate-200 shadow-sm transition">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="card-icon d-flex align-items-center justify-content-center rounded-3 bg-red-light text-red">
+                  <i data-lucide="alert-circle"></i>
+                </div>
+                <span class="font-mono fw-bold text-slate-400 small opacity-60">05</span>
+              </div>
+              <p class="font-heading fw-semibold text-slate-800 text-start text-sm leading-relaxed mb-0">
+                Patient engagement across channels remains fragmented
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="pain-card h-100 bg-white p-4 rounded-4 border border-slate-200 shadow-sm transition">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="card-icon d-flex align-items-center justify-content-center rounded-3 bg-red-light text-red">
+                  <i data-lucide="alert-circle"></i>
+                </div>
+                <span class="font-mono fw-bold text-slate-400 small opacity-60">06</span>
+              </div>
+              <p class="font-heading fw-semibold text-slate-800 text-start text-sm leading-relaxed mb-0">
+                Hospitals lack visibility into patient behaviour and intent
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Central Warning Call-Out -->
+        <div
+          class="mx-auto text-center mt-5 p-4 rounded-4 bg-white border border-slate-200 text-slate-600 max-w-lg shadow-sm small">
+          🚨 Fragmented customer data blocks frontdesk agents from reaching high-intent patient queries, reducing
+          consultation revenues by up to <strong class="text-slate-900">35%</strong>.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. Outcomes Section -->
+    <section class="py-5 bg-white">
+      <div class="container px-4 px-md-5 py-4 max-w-7xl mx-auto">
+
+        <div class="text-center max-w-md mx-auto mb-5">
+          <span
+            class="d-inline-flex align-items-center gap-2 px-3 py-1 bg-teal-light text-teal rounded-pill fw-bold uppercase tracking-wider xs-text">
+            <i data-lucide="award"></i> High-Yield Outcomes
+          </span>
+          <h2 class="font-heading fw-extrabold text-slate-800 mt-3 fs-3 fs-md-2">
+            Improve Patient Acquisition & Engagement
+          </h2>
+          <p class="text-slate-500 mt-2 text-sm leading-relaxed mb-0">
+            Unlock systematic growth loops. Transition from raw campaign numbers directly to validated outpatient
+            appointments.
+          </p>
+        </div>
+
+        <!-- First Rows Sync: Left Image, Right Text -->
+        <div class="row align-items-center gy-5 py-3 mb-5">
+          <div class="col-12 col-lg-6 d-flex justify-content-center">
+            <div class="image-shape-wrapper position-relative w-100 max-w-md">
+              <div class="image-shape-bg-1 mask-organic-1"></div>
+              <div class="image-shape-container mask-organic-1 aspect-square h-360-sm mx-auto position-relative">
+                <img src="assets/images/patient-coordination.png" alt="Patient Coordination Hub"
+                  referrerpolicy="no-referrer" class="img-fluid" />
+              </div>
+              <!-- Glass Floating Badge -->
+              <div
+                class="glass-badge-absolute bottom-l glass-card-floating shadow-xl z-20 d-flex align-items-center gap-2">
+                <div
+                  class="badge-icon-box d-flex align-items-center justify-content-center bg-teal-light text-teal rounded-3 p-1">
+                  <i data-lucide="search" class="w-18"></i>
+                </div>
+                <div class="d-flex flex-column text-start">
+                  <span class="font-heading fw-bold text-slate-900 leading-none xs-text">Enquiry Tracked</span>
+                  <span class="text-slate-500 fw-bold uppercase mt-1 xxs-text">Verified Care</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6 d-flex flex-column gap-4 text-start">
+            <!-- Item 1 -->
+            <div class="d-flex gap-3">
+              <div
+                class="badge-check-icon d-flex align-items-center justify-content-center bg-teal-light text-teal rounded-circle shrink-0 mt-1 shadow-sm">
+                <i data-lucide="check" class="sw-3"></i>
+              </div>
+              <div>
+                <h5 class="font-heading fw-bold text-slate-800 fs-5 mb-1">
+                  Increase Appointment Conversions
+                </h5>
+                <p class="text-slate-500 text-sm leading-relaxed mb-0">
+                  Respond to patient enquiries faster with automated engagement and appointment reservation workflows.
+                </p>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="d-flex gap-3">
+              <div
+                class="badge-check-icon d-flex align-items-center justify-content-center bg-teal-light text-teal rounded-circle shrink-0 mt-1 shadow-sm">
+                <i data-lucide="check" class="sw-3"></i>
+              </div>
+              <div>
+                <h5 class="font-heading fw-bold text-slate-800 fs-5 mb-1">
+                  Reduce Patient Enquiry Leakage
+                </h5>
+                <p class="text-slate-500 text-sm leading-relaxed mb-0">
+                  Ensure every digital and campaign enquiry is immediately captured, contextually mapped, and nurtured.
+                </p>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="d-flex gap-3">
+              <div
+                class="badge-check-icon d-flex align-items-center justify-content-center bg-teal-light text-teal rounded-circle shrink-0 mt-1 shadow-sm">
+                <i data-lucide="check" class="sw-3"></i>
+              </div>
+              <div>
+                <h5 class="font-heading fw-bold text-slate-800 fs-5 mb-1">
+                  Automate Multi-Channel Communication
+                </h5>
+                <p class="text-slate-500 text-sm leading-relaxed mb-0">
+                  Seamlessly engage patients through verified WhatsApp API integration, emails, customized SMS, and
+                  context-aware web elements.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Second Rows Sync: Right Image, Left Text -->
+        <div class="row align-items-center gy-5 pt-4">
+          <div class="col-12 col-lg-6 order-2 order-lg-1 d-flex flex-column gap-4 text-start">
+            <!-- Item 4 -->
+            <div class="d-flex gap-3">
+              <div
+                class="badge-check-icon d-flex align-items-center justify-content-center bg-emerald-light text-emerald rounded-circle shrink-0 mt-1 shadow-sm">
+                <i data-lucide="check" class="sw-3"></i>
+              </div>
+              <div>
+                <h5 class="font-heading fw-bold text-slate-800 fs-5 mb-1">
+                  Improve Front-Office Efficiency
+                </h5>
+                <p class="text-slate-500 text-sm leading-relaxed mb-0">
+                  Substitute tedious outbound calling logs with automatic scheduling templates, optimizing patient flow
+                  and front-office speed.
+                </p>
+              </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="d-flex gap-3">
+              <div
+                class="badge-check-icon d-flex align-items-center justify-content-center bg-emerald-light text-emerald rounded-circle shrink-0 mt-1 shadow-sm">
+                <i data-lucide="check" class="sw-3"></i>
+              </div>
+              <div>
+                <h5 class="font-heading fw-bold text-slate-800 fs-5 mb-1">
+                  Improve Healthcare Marketing ROI
+                </h5>
+                <p class="text-slate-500 text-sm leading-relaxed mb-0">
+                  Identify which ad campaigns, search keywords, and treatment page funnels convert into solid outpatient
+                  consults.
+                </p>
+              </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="d-flex gap-3">
+              <div
+                class="badge-check-icon d-flex align-items-center justify-content-center bg-emerald-light text-emerald rounded-circle shrink-0 mt-1 shadow-sm">
+                <i data-lucide="check" class="sw-3"></i>
+              </div>
+              <div>
+                <h5 class="font-heading fw-bold text-slate-800 fs-5 mb-1">
+                  Enhance Patient Experience
+                </h5>
+                <p class="text-slate-500 text-sm leading-relaxed mb-0">
+                  Provide precise directions, post-care tips, and continuous digital support, building confidence at
+                  every step.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6 order-1 order-lg-2 d-flex justify-content-center">
+            <div class="image-shape-wrapper position-relative w-100 max-w-md">
+              <div class="image-shape-bg-2 mask-organic-2"></div>
+              <div class="image-shape-container mask-organic-2 aspect-square h-360-sm mx-auto position-relative">
+                <img src="assets/images/doctor-consultation.png" alt="Clinical Consult Group"
+                  referrerpolicy="no-referrer" class="img-fluid" />
+              </div>
+              <!-- Glass Floating Badge -->
+              <div
+                class="glass-badge-absolute top-r glass-card-floating shadow-xl z-20 d-flex align-items-center gap-2">
+                <div
+                  class="badge-icon-box d-flex align-items-center justify-content-center bg-emerald-light text-emerald rounded-3 p-1">
+                  <i data-lucide="heart" class="w-18"></i>
+                </div>
+                <div class="d-flex flex-column text-start">
+                  <span class="font-heading fw-bold text-slate-900 leading-none xs-text">Treatment Confirmed</span>
+                  <span class="text-slate-500 fw-bold uppercase mt-1 xxs-text">Verified Care</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Unified Patient Intelligence Section -->
+    <section class="py-5 text-white position-relative overflow-hidden bg-dark-slate">
+      <!-- Dynamic Background visual rings -->
+      <div class="absolute-ring-tr bg-teal-ring"></div>
+      <div class="absolute-ring-bl bg-emerald-ring"></div>
+
+      <div class="container position-relative z-10 px-4 px-md-5 py-4 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto">
+          <span class="font-heading fw-semibold text-emerald uppercase tracking-widest xs-text">
+            Unified Patient Intelligence
+          </span>
+          <h2 class="font-heading fw-extrabold text-white mt-3 mb-4 display-6">
+            One Unified Platform for Patient Engagement & Conversion
+          </h2>
+          <div class="divider-line bg-teal rounded-pill mx-auto"></div>
+
+          <p
+            class="font-sans text-stone-300 fs-5 fw-light leading-relaxed mt-4 pt-2 mb-4 italic border-l-3-teal md-center-border">
+            &ldquo;Instead of managing disconnected systems for CRM, appointment engagement, marketing campaigns,
+            WhatsApp communication, and analytics — Plumb5 helps healthcare businesses centralise patient engagement,
+            automation, customer data, and conversion workflows in one intelligent platform.&rdquo;
+          </p>
+        </div>
+
+        <!-- Dynamic Grid Matrix -->
+        <div class="row row-cols-2 row-cols-sm-4 g-4 text-center pt-4 mt-2 justify-content-center max-w-4xl mx-auto"
+          style="border-top: 1px solid rgba(255, 255, 255, 0.12) !important;">
+
+          <div class="col d-flex flex-column align-items-center">
+            <div
+              class="matrix-box d-flex align-items-center justify-content-center rounded-4 bg-white-5 border border-white-10 text-emerald shadow mb-3 transition">
+              <i data-lucide="users" class="sw-2 font-24"></i>
+            </div>
+            <span class="font-heading fw-semibold text-white small">Central Client Hub</span>
+          </div>
+
+          <div class="col d-flex flex-column align-items-center">
+            <div
+              class="matrix-box d-flex align-items-center justify-content-center rounded-4 bg-white-5 border border-white-10 text-emerald shadow mb-3 transition">
+              <i data-lucide="message-square" class="sw-2 font-24"></i>
+            </div>
+            <span class="font-heading fw-semibold text-white small">Secure WhatsApp Flow</span>
+          </div>
+
+          <div class="col d-flex flex-column align-items-center">
+            <div
+              class="matrix-box d-flex align-items-center justify-content-center rounded-4 bg-white-5 border border-white-10 text-emerald shadow mb-3 transition">
+              <i data-lucide="trending-up" class="sw-2 font-24"></i>
+            </div>
+            <span class="font-heading fw-semibold text-white small">Campaign Attribution</span>
+          </div>
+
+          <div class="col d-flex flex-column align-items-center">
+            <div
+              class="matrix-box d-flex align-items-center justify-content-center rounded-4 bg-white-5 border border-white-10 text-emerald shadow mb-3 transition">
+              <i data-lucide="database" class="sw-2 font-24"></i>
+            </div>
+            <span class="font-heading fw-semibold text-white small">Automative CRM</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. End-to-End Timeline Section -->
+    <section class="py-5 bg-slate-50 border-bottom border-slate-200">
+      <div class="container px-4 px-md-5 py-4 max-w-7xl mx-auto">
+
+        <!-- Header Block -->
+        <div class="text-center max-w-md mx-auto mb-5">
+          <span
+            class="d-inline-flex align-items-center gap-2 px-3 py-1 bg-teal-light text-teal rounded-pill fw-bold uppercase tracking-wider xs-text">
+            <i data-lucide="activity"></i> End-to-End Automation
+          </span>
+          <h2 class="font-heading fw-extrabold text-slate-800 mt-3 fs-3 fs-md-2">
+            The Connected Patient Journey
+          </h2>
+          <p class="text-slate-500 mt-2 text-sm leading-relaxed mb-0">
+            Visualize how Plumb5 tracks, filters, and nurtures patients seamlessly across crucial milestones.
+          </p>
+        </div>
+
+        <!-- CONTAINER TIMELINE BOX -->
+        <div
+          class="timeline-container-box p-4 p-md-5 bg-white border border-slate-200 rounded-5 shadow-sm max-w-4xl mx-auto">
+
+          <!-- DESKTOP TIMELINE DISPLAY -->
+          <div class="d-none d-lg-block position-relative py-5 select-none">
+            <!-- Connective Line Base Background -->
+            <div class="timeline-line bg-slate-200 rounded-pill"></div>
+            <!-- Active Colored Lead Line Dynamic via JS -->
+            <div id="timeline-progress-bar" class="timeline-progress rounded-pill"></div>
+
+            <div class="row row-cols-5 g-2 position-relative">
+
+              <!-- Node 1 -->
+              <div
+                class="col d-flex flex-column align-items-center text-center cursor-pointer timeline-node-btn active-node"
+                data-step="1">
+                <div
+                  class="node-circle z-10 w-14 h-14 rounded-circle border-2 flex items-center justify-center transition">
+                  <i data-lucide="search" class="font-20"></i>
+                </div>
+                <p class="xxs-text uppercase fw-bold tracking-wider mt-3 node-channel-tag text-teal text-primary mb-1">
+                  Inbound</p>
+                <h6 class="font-heading fw-bold text-slate-800 xs-text mb-1">Patient Enquiry</h6>
+                <p class="text-slate-500 xxxs-text leading-relaxed mt-2 px-1 text-center long-desc-block">
+                  Capture enquiries automatically from digital ads, phone, or offline channels.
+                </p>
+                <span class="badge border-slate bg-light text-slate px-2 py-0.5 mt-2 font-mono text-9 fw-semibold">0 sec
+                  Capture</span>
+              </div>
+
+              <!-- Node 2 -->
+              <div class="col d-flex flex-column align-items-center text-center cursor-pointer timeline-node-btn"
+                data-step="2">
+                <div
+                  class="node-circle z-10 w-14 h-14 rounded-circle border-2 flex items-center justify-center transition">
+                  <i data-lucide="message-square" class="font-20"></i>
+                </div>
+                <p class="xxs-text uppercase fw-bold tracking-wider mt-3 node-channel-tag text-slate-400 mb-1">Instant
+                  Touch</p>
+                <h6 class="font-heading fw-bold text-slate-800 xs-text mb-1">Automated Follow-Up</h6>
+                <p class="text-slate-500 xxxs-text leading-relaxed mt-2 px-1 text-center long-desc-block">
+                  Nurture with customized multi-channel templates via secure WhatsApp logs instantly.
+                </p>
+                <span class="badge border-slate bg-light text-slate px-2 py-0.5 mt-2 font-mono text-9 fw-semibold">98%
+                  Open Rate</span>
+              </div>
+
+              <!-- Node 3 -->
+              <div class="col d-flex flex-column align-items-center text-center cursor-pointer timeline-node-btn"
+                data-step="3">
+                <div
+                  class="node-circle z-10 w-14 h-14 rounded-circle border-2 flex items-center justify-center transition">
+                  <i data-lucide="calendar-check" class="font-20"></i>
+                </div>
+                <p class="xxs-text uppercase fw-bold tracking-wider mt-3 node-channel-tag text-slate-400 mb-1">Fluid
+                  Booking</p>
+                <h6 class="font-heading fw-bold text-slate-800 xs-text mb-1">Appointment Booking</h6>
+                <p class="text-slate-500 xxxs-text leading-relaxed mt-2 px-1 text-center long-desc-block">
+                  Seamless single-click appointment reservation without back-and-forth frontdesk calls.
+                </p>
+                <span class="badge border-slate bg-light text-slate px-2 py-0.5 mt-2 font-mono text-9 fw-semibold">3x
+                  Conversions</span>
+              </div>
+
+              <!-- Node 4 -->
+              <div class="col d-flex flex-column align-items-center text-center cursor-pointer timeline-node-btn"
+                data-step="4">
+                <div
+                  class="node-circle z-10 w-14 h-14 rounded-circle border-2 flex items-center justify-center transition">
+                  <i data-lucide="stethoscope" class="font-20"></i>
+                </div>
+                <p class="xxs-text uppercase fw-bold tracking-wider mt-3 node-channel-tag text-slate-400 mb-1">Clinical
+                  Care</p>
+                <h6 class="font-heading fw-bold text-slate-800 xs-text mb-1">Consultation</h6>
+                <p class="text-slate-500 xxxs-text leading-relaxed mt-2 px-1 text-center long-desc-block">
+                  Patients attend scheduled sessions with pre-consultation medical intake briefs.
+                </p>
+                <span class="badge border-slate bg-light text-slate px-2 py-0.5 mt-2 font-mono text-9 fw-semibold">92%
+                  Show Rate</span>
+              </div>
+
+              <!-- Node 5 -->
+              <div class="col d-flex flex-column align-items-center text-center cursor-pointer timeline-node-btn"
+                data-step="5">
+                <div
+                  class="node-circle z-10 w-14 h-14 rounded-circle border-2 flex items-center justify-center transition">
+                  <i data-lucide="heart" class="font-20"></i>
+                </div>
+                <p class="xxs-text uppercase fw-bold tracking-wider mt-3 node-channel-tag text-slate-400 mb-1">Care
+                  Continuity</p>
+                <h6 class="font-heading fw-bold text-slate-800 xs-text mb-1">Care Retention</h6>
+                <p class="text-slate-500 xxxs-text leading-relaxed mt-2 px-1 text-center long-desc-block">
+                  Automate wellness checks, test reports, and future healthcare checkup bookings.
+                </p>
+                <span class="badge border-slate bg-light text-slate px-2 py-0.5 mt-2 font-mono text-9 fw-semibold">45%
+                  Return Rate</span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- MOBILE TIMELINE DISPLAY -->
+          <div class="d-block d-lg-none timeline-vertical">
+
+            <!-- Mobile 1 -->
+            <div class="timeline-vertical-node mb-4 select-none cursor-pointer p-2 active-v-node" data-step="1">
+              <div
+                class="timeline-vertical-circle d-flex align-items-center justify-content-center border-2 bg-white transition">
+                <i data-lucide="search" class="w-14"></i>
+              </div>
+              <div class="d-flex align-items-center flex-wrap gap-2">
+                <h5 class="font-heading fw-bold text-slate-900 small mb-0">Patient Enquiry</h5>
+                <span class="badge bg-light text-muted border border-slate-200 py-0.5 px-2 font-mono max-text">0 sec
+                  Capture</span>
+              </div>
+              <p class="xs-text fw-bold text-primary tracking-wide text-uppercase mb-0 mt-1 tag-v-channel">Inbound</p>
+              <p class="text-slate-500 xs-text leading-relaxed mt-2 mb-0">
+                Capture enquiries automatically from digital ads, phone, or offline channels.
+              </p>
+            </div>
+
+            <!-- Mobile 2 -->
+            <div class="timeline-vertical-node mb-4 select-none cursor-pointer p-2" data-step="2">
+              <div
+                class="timeline-vertical-circle d-flex align-items-center justify-content-center border-2 bg-white transition">
+                <i data-lucide="message-square" class="w-14"></i>
+              </div>
+              <div class="d-flex align-items-center flex-wrap gap-2">
+                <h5 class="font-heading fw-bold text-slate-900 small mb-0">Automated Follow-Up</h5>
+                <span class="badge bg-light text-muted border border-slate-200 py-0.5 px-2 font-mono max-text">98% Open
+                  Rate</span>
+              </div>
+              <p class="xs-text fw-bold text-slate-400 tracking-wide text-uppercase mb-0 mt-1 tag-v-channel">Instant
+                Touch</p>
+              <p class="text-slate-500 xs-text leading-relaxed mt-2 mb-0">
+                Nurture with customized multi-channel templates via secure WhatsApp logs instantly.
+              </p>
+            </div>
+
+            <!-- Mobile 3 -->
+            <div class="timeline-vertical-node mb-4 select-none cursor-pointer p-2" data-step="3">
+              <div
+                class="timeline-vertical-circle d-flex align-items-center justify-content-center border-2 bg-white transition">
+                <i data-lucide="calendar-check" class="w-14"></i>
+              </div>
+              <div class="d-flex align-items-center flex-wrap gap-2">
+                <h5 class="font-heading fw-bold text-slate-900 small mb-0">Appointment Booking</h5>
+                <span class="badge bg-light text-muted border border-slate-200 py-0.5 px-2 font-mono max-text">3x
+                  Conversions</span>
+              </div>
+              <p class="xs-text fw-bold text-slate-400 tracking-wide text-uppercase mb-0 mt-1 tag-v-channel">Fluid
+                Booking</p>
+              <p class="text-slate-500 xs-text leading-relaxed mt-2 mb-0">
+                Seamless single-click appointment reservation without back-and-forth frontdesk calls.
+              </p>
+            </div>
+
+            <!-- Mobile 4 -->
+            <div class="timeline-vertical-node mb-4 select-none cursor-pointer p-2" data-step="4">
+              <div
+                class="timeline-vertical-circle d-flex align-items-center justify-content-center border-2 bg-white transition">
+                <i data-lucide="stethoscope" class="w-14"></i>
+              </div>
+              <div class="d-flex align-items-center flex-wrap gap-2">
+                <h5 class="font-heading fw-bold text-slate-900 small mb-0">Consultation</h5>
+                <span class="badge bg-light text-muted border border-slate-200 py-0.5 px-2 font-mono max-text">92% Show
+                  Rate</span>
+              </div>
+              <p class="xs-text fw-bold text-slate-400 tracking-wide text-uppercase mb-0 mt-1 tag-v-channel">Clinical
+                Care</p>
+              <p class="text-slate-500 xs-text leading-relaxed mt-2 mb-0">
+                Patients attend scheduled sessions with pre-consultation medical intake briefs.
+              </p>
+            </div>
+
+            <!-- Mobile 5 -->
+            <div class="timeline-vertical-node select-none cursor-pointer p-2" data-step="5">
+              <div
+                class="timeline-vertical-circle d-flex align-items-center justify-content-center border-2 bg-white transition">
+                <i data-lucide="heart" class="w-14"></i>
+              </div>
+              <div class="d-flex align-items-center flex-wrap gap-2">
+                <h5 class="font-heading fw-bold text-slate-900 small mb-0">Care Retention</h5>
+                <span class="badge bg-light text-muted border border-slate-200 py-0.5 px-2 font-mono max-text">45%
+                  Return Rate</span>
+              </div>
+              <p class="xs-text fw-bold text-slate-400 tracking-wide text-uppercase mb-0 mt-1 tag-v-channel">Care
+                Continuity</p>
+              <p class="text-slate-500 xs-text leading-relaxed mt-2 mb-0">
+                Automate wellness checks, test reports, and future healthcare checkup bookings.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 9. Dashboard Presentation Section -->
+    <section class="py-5 bg-white">
+      <div class="container px-4 px-md-5 py-4 max-w-7xl mx-auto">
+        <div class="text-center max-w-md mx-auto mb-5">
+          <span class="font-heading fw-semibold text-accent uppercase tracking-widest xs-text d-block mb-1">
+            Technological Paradigm
+          </span>
+          <h2 class="font-heading fw-bold text-slate-800 display-6">
+            The Professional Engagement Suite
+          </h2>
+          <p class="text-slate-500 mt-2 text-sm">
+            Elegant. Minimal. High productivity tools built explicitly for medical operational analytics.
+          </p>
+        </div>
+
+        <!-- iPad/Macbook simulated interface frame -->
+        <div class="macbook-ui-container shadow-2xl position-relative select-none mx-auto mb-5">
+          <div class="macbook-screen">
+            <div class="macbook-screentop d-flex gap-2 pb-2 ps-2">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="macbook-innerimg">
+              <img src="assets/images/plumb5-dashboard.png" alt="Plumb5 Analytics Interface"
+                referrerpolicy="no-referrer" class="img-fluid rounded-1" />
+            </div>
+          </div>
+          <div class="macbook-base"></div>
+          <div class="macbook-notch"></div>
+        </div>
+
+        <!-- Technical benefit metrics grids -->
+        <div class="row row-cols-2 row-cols-md-4 g-4 mt-5 pt-3 max-w-4xl mx-auto text-center justify-content-center">
+
+          <div class="col hover-scale">
+            <h6 class="font-heading fw-bold text-slate-800 text-sm mb-2">Patient Dashboard</h6>
+            <p class="text-slate-500 text-xs leading-relaxed mb-0">
+              Visualise real-time inbound enquiries, conversion funnels, and consultation lists.
+            </p>
+          </div>
+
+          <div class="col hover-scale">
+            <h6 class="font-heading fw-bold text-slate-800 text-sm mb-2">WhatsApp Automation</h6>
+            <p class="text-slate-500 text-xs leading-relaxed mb-0">
+              Automate verification checkmarks, instant appointment confirmations, and follow-ups.
+            </p>
+          </div>
+
+          <div class="col hover-scale">
+            <h6 class="font-heading fw-bold text-slate-800 text-sm mb-2">Appointment Tracking</h6>
+            <p class="text-slate-500 text-xs leading-relaxed mb-0">
+              Pinpoint which therapeutic keywords and campaigns drive active clinical visits.
+            </p>
+          </div>
+
+          <div class="col hover-scale">
+            <h6 class="font-heading fw-bold text-slate-800 text-sm mb-2">Campaign Analytics</h6>
+            <p class="text-slate-500 text-xs leading-relaxed mb-0">
+              Examine marketing yield and ROI metrics classified by clinical location.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 10. Social Proof Section -->
+    <section class="py-5 bg-white border-bottom border-slate-100">
+      <div class="container px-4 px-md-5 py-4 max-w-7xl mx-auto">
+
+        <div class="text-center max-w-md mx-auto mb-5">
+          <span
+            class="d-inline-flex align-items-center gap-2 px-3 py-1 bg-sky-light text-sky rounded-pill fw-bold uppercase tracking-wider xs-text">
+            <i data-lucide="star" class="fill-sky"></i> High Authority
+          </span>
+          <h2 class="font-heading fw-extrabold text-slate-800 mt-3 fs-3 fs-md-2">
+            Trusted by Top Healthcare Leaders
+          </h2>
+          <p class="text-slate-500 mt-2 text-sm mb-0">
+            Empowering clinical brands focused on improving outpatient yield and operational efficiency.
+          </p>
+        </div>
+
+        <!-- Monochrome Hospital Logo Strip -->
+
+
+
+        <div class="client-logo-section mb-5 pb-5 border-bottom border-slate-100">
+
+          <div class="logo-slider">
+
+            <div class="logo-track">
+
+              <!-- Set 1 -->
+              <div class="logo-card">
+                <img src="assets/lp-cust/aastrika.jpg" alt="Godrej">
+              </div>
+
+              <div class="logo-card">
+                <img src="assets/lp-cust/advancells.png" alt="Groww">
+              </div>
+
+              <div class="logo-card">
+                <img src="assets/lp-cust/cadabams.png" alt="Unilever">
+              </div>
+
+              <div class="logo-card">
+                <img src="assets/lp-cust/certify-health.jpg" alt="AIMS">
+              </div>
+
+              <div class="logo-card">
+                <img src="assets/lp-cust/columbiasia.png" alt="Brigade">
+              </div>
+
+              <div class="logo-card">
+                <img src="assets/lp-cust/iirrh.jpg" alt="Kotak">
+              </div>
+
+              <div class="logo-card">
+                <img src="assets/lp-cust/integrated-wellness.jpg" alt="Unilever">
+              </div>
+
+
+              <div class="logo-card">
+                <img src="assets/lp-cust/lavish-looks.jpg" alt="Brigade">
+              </div>
+
+              <div class="logo-card">
+                <img src="assets/lp-cust/passid.jpg" alt="Kotak">
+              </div>
+
+              <div class="logo-card">
+                <img src="assets/lp-cust/reachHomeopathic.jpg" alt="Unilever">
+              </div>
+
+              <div class="logo-card">
+                <img src="assets/lp-cust/vcare.png" alt="AIMS">
+              </div>
+
+              
+
+              <!-- Duplicate for infinite loop -->
+              <!-- Set 1 -->
+               <div class="logo-card">
+                <img src="assets/lp-cust/aastrika.jpg" alt="Godrej">
+              </div>
+
+              <div class="logo-card">
+                <img src="assets/lp-cust/advancells.png" alt="Groww">
+              </div>
+
+              <div class="logo-card">
+                <img src="assets/lp-cust/cadabams.png" alt="Unilever">
+              </div>
+
+              <div class="logo-card">
+                <img src="assets/lp-cust/certify-health.jpg" alt="AIMS">
+              </div>
+
+              <div class="logo-card">
+                <img src="assets/lp-cust/columbiasia.png" alt="Brigade">
+              </div>
+
+              <div class="logo-card">
+                <img src="assets/lp-cust/iirrh.jpg" alt="Kotak">
+              </div>
+
+              <div class="logo-card">
+                <img src="assets/lp-cust/integrated-wellness.jpg" alt="Unilever">
+              </div>
+
+
+              <div class="logo-card">
+                <img src="assets/lp-cust/lavish-looks.jpg" alt="Brigade">
+              </div>
+
+              <div class="logo-card">
+                <img src="assets/lp-cust/passid.jpg" alt="Kotak">
+              </div>
+
+              <div class="logo-card">
+                <img src="assets/lp-cust/reachHomeopathic.jpg" alt="Unilever">
+              </div>
+
+              <div class="logo-card">
+                <img src="assets/lp-cust/vcare.png" alt="AIMS">
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Verification Brand Cards Grid -->
+        <!-- Editorial Quote Blocks -->
+        <div class="row g-4 pt-3">
+
+          <!-- Quote 1 -->
+          <div class="col-12 col-md-6">
+            <div
+              class="quote-card p-4 p-sm-5 rounded-5 bg-light-slate border border-slate-200/60 position-relative d-flex flex-column justify-content-between overflow-hidden h-100">
+              <span class="font-heading fw-bold quote-mark position-absolute leading-none select-none">“</span>
+              <p class="font-sans text-slate-700 italic text-sm leading-relaxed position-relative z-10 text-start">
+                I’d like to highlight the Plumb5 application, which has played a key role in our internal campaign
+                development. Its sleek user interface and intuitively placed features make it incredibly easy to draft
+                quick and refined campaigns.
+
+                Kudos to the entire Plumb5 team for creating such an efficient and well-designed platform.
+              <div class="d-flex align-items-center gap-3 mt-4">
+                <div
+                  class="circle-avatar d-flex align-items-center justify-content-center bg-dark text-white font-heading fw-bold rounded-circle text-xs select-none">
+                  D
+                </div>
+                <div class="d-flex flex-column text-start">
+                  <span class="font-heading fw-bold text-slate-800 small leading-none">Mr.Durgesh Pandey,</span>
+                  <span class="xxs-text text-teal fw-bold uppercase mt-1">Certify Health</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quote 2 -->
+          <div class="col-12 col-md-6">
+            <div
+              class="quote-card p-4 p-sm-5 rounded-5 bg-light-slate border border-slate-200/60 position-relative d-flex flex-column justify-content-between overflow-hidden h-100">
+              <span class="font-heading fw-bold quote-mark position-absolute leading-none select-none">“</span>
+              <p class="font-sans text-slate-700 italic text-sm leading-relaxed position-relative z-10 text-start">
+                Plumb5 has been instrumental in organizing our customer data and enhancing the effectiveness of our
+                email marketing. The platform’s features are robust and intuitive, making our workflows much smoother. A
+                special thanks to Sheetal and the support team - their responsiveness and dedication have made a real
+                difference whenever we’ve needed assistance.
+              </p>
+              <div class="d-flex align-items-center gap-3 mt-4">
+                <div
+                  class="circle-avatar d-flex align-items-center justify-content-center bg-dark text-white font-heading fw-bold rounded-circle text-xs select-none">
+                  K
+                </div>
+                <div class="d-flex flex-column text-start">
+                  <span class="font-heading fw-bold text-slate-800 small leading-none">Mr. Karhik Chinnam,</span>
+                  <span class="xxs-text text-teal fw-bold uppercase mt-1">Certify Health / Certify Me ,USA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Trust & Safety Standards Strip -->
+    <!-- <section class="py-4 bg-slate-900 text-white select-none">
+      <div class="container px-4 px-md-5 max-w-7xl mx-auto">
+        <div class="row g-4">
+
+    
+          <div class="col-12 col-md-4">
+            <div class="p-4 rounded-4 bg-white-5 border border-white-15 d-flex gap-3 h-100 hover-scale text-start">
+              <div
+                class="standard-icon-box d-flex align-items-center justify-content-center rounded-3 bg-teal-opacity text-teal shrink-0">
+                <i data-lucide="shield" class="sw-2"></i>
+              </div>
+              <div>
+                <h5 class="font-heading fw-bold text-white small mb-1">HIPAA-Friendly Processes</h5>
+                <p class="text-slate-400 xs-text leading-relaxed mb-0">
+                  Complies with international medical records storage standards, keeping identifying details safely
+                  audited.
+                </p>
+              </div>
+            </div>
+          </div>
+
+       
+          <div class="col-12 col-md-4">
+            <div class="p-4 rounded-4 bg-white-5 border border-white-15 d-flex gap-3 h-100 hover-scale text-start">
+              <div
+                class="standard-icon-box d-flex align-items-center justify-content-center rounded-3 bg-teal-opacity text-teal shrink-0">
+                <i data-lucide="lock" class="sw-2"></i>
+              </div>
+              <div>
+                <h5 class="font-heading fw-bold text-white small mb-1">GDPR Compliant</h5>
+                <p class="text-slate-400 xs-text leading-relaxed mb-0">
+                  Empowers global compliance policies so your patients retain ownership over consent parameters.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        
+          <div class="col-12 col-md-4">
+            <div class="p-4 rounded-4 bg-white-5 border border-white-15 d-flex gap-3 h-100 hover-scale text-start">
+              <div
+                class="standard-icon-box d-flex align-items-center justify-content-center rounded-3 bg-teal-opacity text-teal shrink-0">
+                <i data-lucide="server" class="sw-2"></i>
+              </div>
+              <div>
+                <h5 class="font-heading fw-bold text-white small mb-1">Enterprise-Grade Security</h5>
+                <p class="text-slate-400 xs-text leading-relaxed mb-0">
+                  Protected behind custom authentication vectors and TLS tunnels, safeguarding systems from
+                  vulnerabilities.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section> -->
+
+    <!-- 11. Lead Form Section -->
+    <section id="lead-form-section" class="py-5 bg-slate-50 scroll-mt-20">
+      <div class="container px-4 px-md-5 py-4 max-w-7xl mx-auto">
+
+        <!-- Title Block -->
+        <div class="text-center max-w-md mx-auto mb-5">
+          <h2 class="font-heading fw-extrabold text-slate-800 mb-0 fs-3 fs-md-2">
+            Book Your Healthcare Growth Consultation
+          </h2>
+          <p class="text-slate-500 mt-3 text-sm leading-relaxed mb-0">
+            Understand how healthcare automation and patient engagement workflows can improve enquiry management,
+            appointment bookings, and patient retention.
+          </p>
+        </div>
+
+        <!-- Lead Form Grid -->
+        <div class="row g-5 align-items-stretch">
+
+          <!-- Info-Access Left Card Column -->
+          <div class="col-12 col-lg-5 d-flex flex-column justify-content-between py-2 text-start">
+            <div>
+              <span
+                class="d-inline-flex align-items-center gap-2 px-3 py-1 bg-teal-light text-teal rounded-pill fw-bold uppercase tracking-wider xs-text mb-4">
+                <i data-lucide="activity"></i> Direct Access to Growth
+              </span>
+              <h3 class="font-heading fw-bold text-slate-900 leading-snug mb-3">
+                Take Control of Your Patient Acquisition Channels
+              </h3>
+              <p class="text-slate-500 text-sm leading-relaxed mb-4">
+                Diagnose your patient journey leakage, measure channel efficiencies, and deploy real-time automations to
+                lift hospital appointments safely.
+              </p>
+
+              <div class="d-flex flex-column gap-4 mt-4 py-2">
+
+                <!-- Bullet 1 -->
+                <div class="d-flex gap-3">
+                  <div
+                    class="step-icon-btn d-flex align-items-center justify-content-center bg-teal-light text-teal rounded-3 shrink-0 shadow-sm">
+                    <i data-lucide="check-circle" class="font-20"></i>
+                  </div>
+                  <div>
+                    <h6 class="font-heading fw-bold text-slate-800 text-sm mb-1">Leakage Diagnosis</h6>
+                    <p class="text-slate-500 xs-text leading-relaxed mb-0">
+                      See exactly where patient inquiries drop off in Google Ads and digital campaigns prior to
+                      consultations.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Bullet 2 -->
+                <div class="d-flex gap-3">
+                  <div
+                    class="step-icon-btn d-flex align-items-center justify-content-center bg-teal-light text-teal rounded-3 shrink-0 shadow-sm">
+                    <i data-lucide="users" class="font-20"></i>
+                  </div>
+                  <div>
+                    <h6 class="font-heading fw-bold text-slate-800 text-sm mb-1">Patient-First Workflows</h6>
+                    <p class="text-slate-500 xs-text leading-relaxed mb-0">
+                      Premium custom-tailored WhatsApp and SMS automation streams based on specialty and engagement
+                      history.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Bullet 3 -->
+                <div class="d-flex gap-3">
+                  <div
+                    class="step-icon-btn d-flex align-items-center justify-content-center bg-teal-light text-teal rounded-3 shrink-0 shadow-sm">
+                    <i data-lucide="lock" class="font-20"></i>
+                  </div>
+                  <div>
+                    <h6 class="font-heading fw-bold text-slate-800 text-sm mb-1">HIPAA-Friendly Security</h6>
+                    <p class="text-slate-500 xs-text leading-relaxed mb-0">
+                      Your patient identifiers and records remain encrypted in secure enterprise-grade databases.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Micro Trust Block -->
+            <div
+              class="p-3 border border-slate-200/60 rounded-4 bg-white/60 d-flex gap-3 align-items-center mt-4 mb-2 shadow-sm">
+              <div class="text-teal p-1">
+                <i data-lucide="calendar" class="w-32"></i>
+              </div>
+              <div>
+                <h6 class="font-heading fw-bold text-slate-800 small mb-0">1-on-1 Growth Consultation</h6>
+                <p class="text-slate-500 xxs-text leading-normal mt-1 mb-0">
+                  Custom analysis report tailored for your healthcare business segment by our conversion specialists.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Form Card Wrapper Right -->
+          <div class="col-12 col-lg-7">
+            <div
+              class="glass-panel p-4 p-sm-5 h-100 d-flex flex-column justify-content-center position-relative overflow-hidden bg-white border border-slate-200/60 shadow-lg">
+              <div class="absolute-blur bg-blur-radial"></div>
+
+              <!-- Setup state elements -->
+              <div id="form-container" class="z-10 position-relative text-start">
+                <form id="lead-generation-form" class="row g-3">
+
+                  <!-- Full Name -->
+                  <div class="col-12 col-sm-6 d-flex flex-column">
+                    <label class="text-xs fw-semibold text-slate-700 label-g">Full Name *</label>
+                    <input type="text" name="fullName" id="fullName" placeholder="e.g. Dr. Satish Nair"
+                      class="custom-form-control-bs w-100" />
+                    <span id="err-fullName" class="text-red xxs-text fw-medium mt-1 d-none">Full Name is required</span>
+                  </div>
+
+                  <!-- Business Email -->
+                  <div class="col-12 col-sm-6 d-flex flex-column">
+                    <label class="text-xs fw-semibold text-slate-700 label-g">Business Email *</label>
+                    <input type="email" name="businessEmail" id="businessEmail" placeholder="satish@hospital.com"
+                      class="custom-form-control-bs w-100" />
+                    <span id="err-businessEmail" class="text-red xxs-text fw-medium mt-1 d-none">Business Email is
+                      required</span>
+                  </div>
+
+                  <!-- Hospital Name -->
+                  <div class="col-12 col-sm-6 d-flex flex-column">
+                    <label class="text-xs fw-semibold text-slate-700 label-g">Hospital / Clinic Name *</label>
+                    <input type="text" name="orgName" id="orgName" placeholder="Apollo Grace Clinics"
+                      class="custom-form-control-bs w-100" />
+                    <span id="err-orgName" class="text-red xxs-text fw-medium mt-1 d-none">Hospital or clinic name is
+                      required</span>
+                  </div>
+
+                  <!-- Website URL -->
+                  <div class="col-12 col-sm-6 d-flex flex-column">
+                    <label class="text-xs fw-semibold text-slate-700 label-g">Website URL *</label>
+                    <input type="text" name="websiteUrl" id="websiteUrl" placeholder="www.graceclinics.com"
+                      class="custom-form-control-bs w-100" />
+                    <span id="err-websiteUrl" class="text-red xxs-text fw-medium mt-1 d-none">Website URL is
+                      required</span>
+                  </div>
+
+                  <!-- Healthcare Segment -->
+                  <div class="col-12 col-sm-6 d-flex flex-column">
+                    <label class="text-xs fw-semibold text-slate-700 label-g">Healthcare Segment *</label>
+                    <select name="segment" id="segment" class="custom-form-control-bs select-custom w-100">
+                      <option value="" selected disabled>Select Segment</option>
+                      <option value="Hospital">Hospital</option>
+                      <option value="Multi-Speciality Clinic">Multi-Speciality Clinic</option>
+                      <option value="Dental Clinic">Dental Clinic</option>
+                      <option value="IVF & Fertility Center">IVF & Fertility Center</option>
+                      <option value="Diagnostic Center">Diagnostic Center</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    <span id="err-segment" class="text-red xxs-text fw-medium mt-1 d-none">Healthcare segment is
+                      required</span>
+                  </div>
+
+                  <!-- Locations -->
+                  <div class="col-12 col-sm-6 d-flex flex-column">
+                    <label class="text-xs fw-semibold text-slate-700 label-g">Number of Locations *</label>
+                    <select name="locations" id="locations" class="custom-form-control-bs select-custom w-100">
+                      <option value="" selected disabled>Select Locations</option>
+                      <option value="1">Single Location</option>
+                      <option value="2-5">2 to 5 Locations</option>
+                      <option value="6-10">6 to 10 Locations</option>
+                      <option value="10+">10+ Locations</option>
+                    </select>
+                    <span id="err-locations" class="text-red xxs-text fw-medium mt-1 d-none">Number of locations is
+                      required</span>
+                  </div>
+
+                  <!-- Marketing Spend -->
+                  <div class="col-12 d-flex flex-column">
+                    <label class="text-xs fw-semibold text-slate-700 label-g">Marketing Spend *</label>
+                    <select name="marketingSpend" id="marketingSpend"
+                      class="custom-form-control-bs select-custom w-100">
+                      <option value="" selected disabled>Select Spend / Mo</option>
+                      <option value="Less than 1 Lakh">Less than ₹1 Lakh</option>
+                      <option value="1-5 Lakhs">₹1 Lakh - ₹5 Lakhs</option>
+                      <option value="5-10 Lakhs">₹5 Lakhs - ₹10 Lakhs</option>
+                      <option value="10+ Lakhs">₹10 Lakhs +</option>
+                    </select>
+                    <span id="err-marketingSpend" class="text-red xxs-text fw-medium mt-1 d-none">Marketing spend is
+                      required</span>
+                  </div>
+
+                  <!-- Biggest Challenge -->
+                  <div class="col-12 d-flex flex-column">
+                    <label class="text-xs fw-semibold text-slate-700 label-g">Biggest Challenge *</label>
+                    <textarea name="biggestChallenge" id="biggestChallenge" rows="3"
+                      placeholder="e.g. Frontdesk is missing incoming WhatsApp enquiries, resulting in lost bookings."
+                      class="custom-form-control-bs textarea-custom w-100"></textarea>
+                    <span id="err-biggestChallenge" class="text-red xxs-text fw-medium mt-1 d-none">Please describe your
+                      biggest challenge</span>
+                  </div>
+
+                  <!-- Submit button -->
+                  <div class="col-12 text-start mt-4">
+                    <button type="submit" id="submit-btn"
+                      class="btn btn-premium w-100 py-3 shadow hover-scale d-inline-flex align-items-center justify-content-center gap-2 cursor-pointer">
+                      <span id="btn-text">Book My Consultation</span>
+                      <i id="btn-icon" data-lucide="arrow-right" class="font-20"></i>
+                    </button>
+                  </div>
+
+                  <!-- Footer security badges -->
+                  <div
+                    class="d-flex align-items-center justify-content-center gap-4 col-12 mt-4 pt-3 border-top border-slate-100 text-center select-none">
+                    <div class="d-flex align-items-center gap-2 text-slate-400 xs-text">
+                      <i data-lucide="shield" class="text-teal w-14"></i> End-to-End Encryption
+                    </div>
+                    <div class="bullet-dot bg-slate-300"></div>
+                    <div class="d-flex align-items-center gap-2 text-slate-400 xs-text">
+                      <i data-lucide="sparkles" class="text-teal w-14"></i> Privacy Guaranteed
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+
+              <!-- Success Screen Confirmation Board (Hidden by default) -->
+              <div id="success-container"
+                class="text-center py-4 px-2 d-flex flex-column align-items-center justify-content-center d-none animate-fade-in z-10 position-relative">
+                <div
+                  class="d-flex align-items-center justify-content-center bg-teal-opacity text-teal rounded-circle w-16 h-16 shadow-inner mb-4">
+                  <i data-lucide="check" class="font-32 font-bold select-none text-teal"></i>
+                </div>
+                <h4 class="font-heading fw-bold text-slate-900 display-7 mb-2">Consultation Booked Successfully!</h4>
+                <p class="text-slate-500 small max-w-sm leading-relaxed mb-4">
+                  Thank you, <strong id="success-client-name" class="text-dark">Dr. Satish Nair</strong>. A premium
+                  healthcare strategist has reserved a custom consultation slot for <strong id="success-org-name"
+                    class="text-dark">Apollo Grace Clinics</strong>.
+                </p>
+
+                <div class="text-start p-4 border border-slate-200/60 rounded-4 bg-slate-50 w-100 max-w-md shadow-sm">
+                  <p class="font-heading fw-bold text-slate-950 text-sm mb-3">What happens next?</p>
+                  <ul class="text-slate-500 xs-text list-disc pl-3 space-y-2 leading-relaxed mb-0">
+                    <li class="mb-2">We will analyze your medical website URL (<strong id="success-website-url"
+                        class="text-stone-800">www.graceclinics.com</strong>).</li>
+                    <li class="mb-2">We will compile a custom conversion leakage report for the <strong
+                        id="success-segment" class="text-stone-800">Hospital</strong> segment.</li>
+                    <li>You will receive an email within 2 hours at <strong id="success-email"
+                        class="text-stone-800">satish@hospital.com</strong> with secure Google Meet invitations.</li>
+                  </ul>
+                </div>
+
+                <button id="book-another-btn"
+                  class="mt-4 border-0 bg-transparent text-teal fw-semibold hover-teal d-inline-flex align-items-center gap-2 xs-text tracking-wide cursor-pointer transition">
+                  Book another consultation
+                  <i data-lucide="arrow-right" class="w-14"></i>
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 12. FAQ Section -->
+    <section class="py-5 bg-white border-top border-slate-100">
+      <div class="container px-4 px-md-5 py-4 max-w-7xl mx-auto">
+
+        <!-- Header Title -->
+        <div class="text-center max-w-md mx-auto mb-5">
+          <span class="font-heading fw-semibold text-accent uppercase tracking-widest xs-text d-block">
+            Information Desk
+          </span>
+          <h2 class="font-heading fw-bold text-slate-800 mt-2 fs-3 fs-md-2">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <!-- FAQ Accordion Layout -->
+        <div class="max-w-xl mx-auto d-flex flex-column gap-3">
+
+          <!-- Accordion Question 1 -->
+          <div class="faq-item border rounded-4 bg-slate-50-50 transition overflow-hidden">
+            <button
+              class="faq-btn w-100 border-0 bg-transparent d-flex align-items-center justify-content-between p-4 focus-none cursor-pointer text-start">
+              <span class="d-flex align-items-center gap-3 pe-3">
+                <i data-lucide="help-circle" class="accordion-icon shrink-0 text-slate-400 font-20"></i>
+                <span class="font-heading fw-semibold text-slate-800 text-sm leading-snug">
+                  Is Plumb5 suitable for hospitals and clinics?
+                </span>
+              </span>
+              <div
+                class="faq-arrow-box d-flex align-items-center justify-content-center rounded-circle text-slate-600 transition">
+                <i data-lucide="chevron-down" class="font-16"></i>
+              </div>
+            </button>
+            <div class="faq-panel overflow-hidden transition-all-3 bg-white">
+              <div class="px-4 pb-4 ps-5 text-slate-500 xs-text leading-relaxed">
+                Yes. Plumb5 is custom-configured for healthcare provider operations looking to improve patient digital
+                touchpoints, centralized CRM engagement, and appointment conversion loop rates.
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Question 2 -->
+          <div class="faq-item border rounded-4 bg-slate-50-50 transition overflow-hidden">
+            <button
+              class="faq-btn w-100 border-0 bg-transparent d-flex align-items-center justify-content-between p-4 focus-none cursor-pointer text-start">
+              <span class="d-flex align-items-center gap-3 pe-3">
+                <i data-lucide="help-circle" class="accordion-icon shrink-0 text-slate-400 font-20"></i>
+                <span class="font-heading fw-semibold text-slate-800 text-sm leading-snug">
+                  Can Plumb5 automate patient communication?
+                </span>
+              </span>
+              <div
+                class="faq-arrow-box d-flex align-items-center justify-content-center rounded-circle text-slate-600 transition">
+                <i data-lucide="chevron-down" class="font-16"></i>
+              </div>
+            </button>
+            <div class="faq-panel overflow-hidden transition-all-3 bg-white">
+              <div class="px-4 pb-4 ps-5 text-slate-500 xs-text leading-relaxed">
+                Absolutely. Clinical groups can securely define trigger matrices across SMS, verified WhatsApp business
+                APIs, emails, and tailored page alerts without breaching confidentiality.
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Question 3 -->
+          <div class="faq-item border rounded-4 bg-slate-50-50 transition overflow-hidden">
+            <button
+              class="faq-btn w-100 border-0 bg-transparent d-flex align-items-center justify-content-between p-4 focus-none cursor-pointer text-start">
+              <span class="d-flex align-items-center gap-3 pe-3">
+                <i data-lucide="help-circle" class="accordion-icon shrink-0 text-slate-400 font-20"></i>
+                <span class="font-heading fw-semibold text-slate-800 text-sm leading-snug">
+                  Can we track marketing campaign performance?
+                </span>
+              </span>
+              <div
+                class="faq-arrow-box d-flex align-items-center justify-content-center rounded-circle text-slate-600 transition">
+                <i data-lucide="chevron-down" class="font-16"></i>
+              </div>
+            </button>
+            <div class="faq-panel overflow-hidden transition-all-3 bg-white">
+              <div class="px-4 pb-4 ps-5 text-slate-500 xs-text leading-relaxed">
+                Yes. Plumb5 links inbound patient calls, physical visits, and consult outcomes directly to source search
+                keywords, enabling accurate cost-per-acquisition analysis.
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Question 4 -->
+          <div class="faq-item border rounded-4 bg-slate-50-50 transition overflow-hidden">
+            <button
+              class="faq-btn w-100 border-0 bg-transparent d-flex align-items-center justify-content-between p-4 focus-none cursor-pointer text-start">
+              <span class="d-flex align-items-center gap-3 pe-3">
+                <i data-lucide="help-circle" class="accordion-icon shrink-0 text-slate-400 font-20"></i>
+                <span class="font-heading fw-semibold text-slate-800 text-sm leading-snug">
+                  Is the platform suitable for multi-location healthcare groups?
+                </span>
+              </span>
+              <div
+                class="faq-arrow-box d-flex align-items-center justify-content-center rounded-circle text-slate-600 transition">
+                <i data-lucide="chevron-down" class="font-16"></i>
+              </div>
+            </button>
+            <div class="faq-panel overflow-hidden transition-all-3 bg-white">
+              <div class="px-4 pb-4 ps-5 text-slate-500 xs-text leading-relaxed">
+                Yes. Our platform scales comfortably to manage separate physical locations, diagnostic labs, and
+                sub-clinics from a unified administrative dashboard panel.
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Question 5 -->
+          <div class="faq-item border rounded-4 bg-slate-50-50 transition overflow-hidden">
+            <button
+              class="faq-btn w-100 border-0 bg-transparent d-flex align-items-center justify-content-between p-4 focus-none cursor-pointer text-start">
+              <span class="d-flex align-items-center gap-3 pe-3">
+                <i data-lucide="help-circle" class="accordion-icon shrink-0 text-slate-400 font-20"></i>
+                <span class="font-heading fw-semibold text-slate-800 text-sm leading-snug">
+                  How quickly can implementation begin?
+                </span>
+              </span>
+              <div
+                class="faq-arrow-box d-flex align-items-center justify-content-center rounded-circle text-slate-600 transition">
+                <i data-lucide="chevron-down" class="font-16"></i>
+              </div>
+            </button>
+            <div class="faq-panel overflow-hidden transition-all-3 bg-white">
+              <div class="px-4 pb-4 ps-5 text-slate-500 xs-text leading-relaxed">
+                Initial implementation and tracking script deployment can happen in as little as 48 hours, depending on
+                custom EMR integrations and CRM data onboarding requirements.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 13. Final CTA Section -->
+    <section
+      class="position-relative d-flex align-items-center justify-content-center bg-slate-950 text-white text-center py-5 overflow-hidden">
+      <!-- Background container image overlay -->
+      <div class="absolute-box select-none z-0">
+        <img src="/src/assets/images/final_cta_doctor_1780898352811.png" alt="Senior Doctor Interaction"
+          referrerpolicy="no-referrer" class="bg-image-cta opacity-28" />
+        <div class="gradient-overlay-b"></div>
+      </div>
+
+      <div
+        class="container position-relative z-10 px-4 px-md-5 py-5 max-w-3xl mx-auto d-flex flex-column align-items-center text-center">
+        <!-- Badge indicator -->
+        <span
+          class="d-inline-flex align-items-center gap-2 px-3 py-1 bg-primary-light text-white rounded-pill fw-bold uppercase tracking-wider xs-text mb-4">
+          <i data-lucide="trophy" class="fill-accent"></i> Start Your Conversion Lift
+        </span>
+
+        <h2 class="font-heading fw-bold text-white tracking-tight leading-snug mb-4 fs-3 fs-sm-2">
+          Improve patient engagement, reduce enquiry leakage, and increase appointment conversions with intelligent
+          healthcare automation.
+        </h2>
+
+        <div class="pt-3 d-flex flex-column flex-sm-row align-items-center justify-content-center gap-3">
+          <button onclick="scrollToSection('lead-form-section')"
+            class="btn btn-premium px-5 py-3 shadow-xl hover-scale d-flex align-items-center justify-content-center gap-2 fw-bold">
+            Book My Free Consultation
+            <i data-lucide="arrow-right" class="font-20"></i>
+          </button>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 14. Footer -->
+  <footer class="bg-slate-950 text-slate-500 py-5 border-top border-slate-900">
+    <div
+      class="container px-4 px-md-5 max-w-7xl mx-auto d-flex flex-column flex-md-row align-items-center justify-content-between gap-4">
+
+      <!-- Logo in footer -->
+      <div class="logo-footer d-flex align-items-center gap-2 select-none cursor-pointer"
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+        <img src="assets/images/logo.png" alt="Plumb5 Logo"
+          style="height: 24px; width: auto; filter: brightness(0) invert(1);" />
+      </div>
+
+      <!-- Informative copyright -->
+      <p class="xs-text text-stone-400 mb-0 text-white-70">
+        &copy; 2026 Plumb5. All rights reserved. Managed under HIPAA-friendly enterprise data security guidelines.
+      </p>
+
+      <!-- Portal status banner -->
+      <!-- <p class="font-mono text-9 tracking-widest uppercase text-slate-400 mb-0">
+        SECURE PORTAL IP://3000
+      </p> -->
+
+    </div>
+  </footer>
+
+  <!-- Lucide Icons Library (UMD) - Specific stable version with correct UMD path -->
+  <script src="https://unpkg.com/lucide@0.447.0/dist/umd/lucide.min.js"></script>
+
+  <!-- Custom Vanilla JS scripts -->
+  <script src="assets/script.js"></script>
+</body>
+
+</html>
