@@ -95,8 +95,8 @@
               with <span class="premium-text-accent">Intelligent Automation</span>
             </h1>
             <p class="premium-hero-subtext font-sans fw-light">
-              Capture, nurture, and convert patient enquiries through automated
-              healthcare engagement workflows.
+              Capture patient enquiries, automate follow-ups, improve appointment conversions, and streamline patient
+              engagement using real-time healthcare marketing automation.
             </p>
             <div class="hero-cta-wrapper mt-4 pt-2">
               <button onclick="scrollToSection('lead-form-section')"
@@ -544,201 +544,278 @@
         </div>
 
         <!-- CONTAINER TIMELINE BOX -->
-        <div
-          class="timeline-container-box p-4 p-md-5 bg-white border border-slate-200 rounded-5 shadow-sm max-w-4xl mx-auto">
+        <div class="premium-timeline-wrapper position-relative max-w-5xl mx-auto z-10 mt-2">
+          <!-- Background ambient glow for premium feel -->
+          <div
+            class="position-absolute top-50 start-50 translate-middle w-100 h-100 bg-teal-opacity rounded-pill pointer-events-none"
+            style="filter: blur(80px); opacity: 0.6; z-index: -1;"></div>
 
-          <!-- DESKTOP TIMELINE DISPLAY -->
-          <div class="d-none d-lg-block position-relative py-5 select-none">
-            <!-- Connective Line Base Background -->
-            <div class="timeline-line bg-slate-200 rounded-pill"></div>
-            <!-- Active Colored Lead Line Dynamic via JS -->
-            <div id="timeline-progress-bar" class="timeline-progress rounded-pill"></div>
+          <div class="timeline-container-box p-4 p-md-5 bg-white rounded-5 shadow-2xl position-relative overflow-hidden"
+            style="border: 1px solid rgba(14, 165, 164, 0.15);">
 
-            <div class="row row-cols-5 g-2 position-relative">
+            <!-- Subtle glass decoration -->
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-white-5 pointer-events-none"
+              style="backdrop-filter: blur(4px);"></div>
 
-              <!-- Node 1 -->
+            <!-- DESKTOP TIMELINE DISPLAY -->
+            <div class="d-none d-lg-block position-relative py-5 select-none z-10">
+              <!-- Connective Line Base Background -->
+              <div class="timeline-line rounded-pill position-absolute"
+                style="background: #e2e8f0; height: 4px; top: 76px; left: 10%; right: 10%; z-index: 1;"></div>
+              <!-- Active Colored Lead Line Dynamic via JS -->
+              <div id="timeline-progress-bar" class="timeline-progress rounded-pill shadow-sm position-absolute"
+                style="background: linear-gradient(90deg, #0EA5A4, #14B8A6, #38bdf8); height: 4px; top: 76px; left: 10%; width: 0%; z-index: 2;">
+              </div>
+
+              <div class="row row-cols-5 g-3 position-relative z-10" style="z-index: 10;">
+
+                <!-- Node 1 -->
+                <div
+                  class="col d-flex flex-column align-items-center text-center cursor-pointer timeline-node-btn active-node group text-decoration-none"
+                  data-step="1">
+                  <div
+                    class="node-circle position-relative z-10 w-16 h-16 rounded-circle bg-white flex items-center justify-center transition-all-3 shadow-sm border border-slate-200"
+                    style="color: #64748b;">
+                    <div
+                      class="active-pulse position-absolute w-100 h-100 rounded-circle animate-ping bg-teal opacity-25">
+                    </div>
+                    <i data-lucide="search" class="font-24 position-relative z-10"></i>
+                  </div>
+                  <div class="node-content mt-4 transition-all-3 hover-scale">
+                    <p class="xxs-text uppercase fw-bold tracking-widest text-teal mb-2">Inbound</p>
+                    <h6 class="font-heading fw-extrabold text-slate-800 text-sm mb-2">Patient Enquiry</h6>
+                    <p class="text-slate-500 text-xs leading-relaxed px-1 text-center long-desc-block mb-3">
+                      Capture enquiries automatically from digital ads, phone, or offline channels.
+                    </p>
+                    <span
+                      class="badge bg-teal-light text-teal px-3 py-1-5 rounded-pill shadow-sm border border-white font-mono text-xs fw-bold">0
+                      sec Capture</span>
+                  </div>
+                </div>
+
+                <!-- Node 2 -->
+                <div
+                  class="col d-flex flex-column align-items-center text-center cursor-pointer timeline-node-btn group text-decoration-none"
+                  data-step="2">
+                  <div
+                    class="node-circle position-relative z-10 w-16 h-16 rounded-circle bg-white flex items-center justify-center transition-all-3 shadow-sm border border-slate-200"
+                    style="color: #94a3b8;">
+                    <div
+                      class="active-pulse position-absolute w-100 h-100 rounded-circle animate-ping bg-teal opacity-25">
+                    </div>
+                    <i data-lucide="message-square" class="font-24 position-relative z-10"></i>
+                  </div>
+                  <div class="node-content mt-4 transition-all-3">
+                    <p class="xxs-text uppercase fw-bold tracking-widest text-slate-400 mb-2">Instant Touch</p>
+                    <h6 class="font-heading fw-bold text-slate-700 text-sm mb-2">Automated Follow-Up</h6>
+                    <p class="text-slate-500 text-xs leading-relaxed px-1 text-center long-desc-block mb-3">
+                      Nurture with customized multi-channel templates via secure WhatsApp logs instantly.
+                    </p>
+                    <span
+                      class="badge bg-slate-50 text-slate-500 px-3 py-1-5 rounded-pill border border-slate-200 font-mono text-xs fw-semibold">98%
+                      Open Rate</span>
+                  </div>
+                </div>
+
+                <!-- Node 3 -->
+                <div
+                  class="col d-flex flex-column align-items-center text-center cursor-pointer timeline-node-btn group text-decoration-none"
+                  data-step="3">
+                  <div
+                    class="node-circle position-relative z-10 w-16 h-16 rounded-circle bg-white flex items-center justify-center transition-all-3 shadow-sm border border-slate-200"
+                    style="color: #94a3b8;">
+                    <div
+                      class="active-pulse position-absolute w-100 h-100 rounded-circle animate-ping bg-teal opacity-25">
+                    </div>
+                    <i data-lucide="calendar-check" class="font-24 position-relative z-10"></i>
+                  </div>
+                  <div class="node-content mt-4 transition-all-3">
+                    <p class="xxs-text uppercase fw-bold tracking-widest text-slate-400 mb-2">Fluid Booking</p>
+                    <h6 class="font-heading fw-bold text-slate-700 text-sm mb-2">Appointment Booking</h6>
+                    <p class="text-slate-500 text-xs leading-relaxed px-1 text-center long-desc-block mb-3">
+                      Seamless single-click appointment reservation without back-and-forth frontdesk calls.
+                    </p>
+                    <span
+                      class="badge bg-slate-50 text-slate-500 px-3 py-1-5 rounded-pill border border-slate-200 font-mono text-xs fw-semibold">3x
+                      Conversions</span>
+                  </div>
+                </div>
+
+                <!-- Node 4 -->
+                <div
+                  class="col d-flex flex-column align-items-center text-center cursor-pointer timeline-node-btn group text-decoration-none"
+                  data-step="4">
+                  <div
+                    class="node-circle position-relative z-10 w-16 h-16 rounded-circle bg-white flex items-center justify-center transition-all-3 shadow-sm border border-slate-200"
+                    style="color: #94a3b8;">
+                    <div
+                      class="active-pulse position-absolute w-100 h-100 rounded-circle animate-ping bg-teal opacity-25">
+                    </div>
+                    <i data-lucide="stethoscope" class="font-24 position-relative z-10"></i>
+                  </div>
+                  <div class="node-content mt-4 transition-all-3">
+                    <p class="xxs-text uppercase fw-bold tracking-widest text-slate-400 mb-2">Clinical Care</p>
+                    <h6 class="font-heading fw-bold text-slate-700 text-sm mb-2">Consultation</h6>
+                    <p class="text-slate-500 text-xs leading-relaxed px-1 text-center long-desc-block mb-3">
+                      Patients attend scheduled sessions with pre-consultation medical intake briefs.
+                    </p>
+                    <span
+                      class="badge bg-slate-50 text-slate-500 px-3 py-1-5 rounded-pill border border-slate-200 font-mono text-xs fw-semibold">92%
+                      Show Rate</span>
+                  </div>
+                </div>
+
+                <!-- Node 5 -->
+                <div
+                  class="col d-flex flex-column align-items-center text-center cursor-pointer timeline-node-btn group text-decoration-none"
+                  data-step="5">
+                  <div
+                    class="node-circle position-relative z-10 w-16 h-16 rounded-circle bg-white flex items-center justify-center transition-all-3 shadow-sm border border-slate-200"
+                    style="color: #94a3b8;">
+                    <div
+                      class="active-pulse position-absolute w-100 h-100 rounded-circle animate-ping bg-teal opacity-25">
+                    </div>
+                    <i data-lucide="heart" class="font-24 position-relative z-10"></i>
+                  </div>
+                  <div class="node-content mt-4 transition-all-3">
+                    <p class="xxs-text uppercase fw-bold tracking-widest text-slate-400 mb-2">Care Continuity</p>
+                    <h6 class="font-heading fw-bold text-slate-700 text-sm mb-2">Care Retention</h6>
+                    <p class="text-slate-500 text-xs leading-relaxed px-1 text-center long-desc-block mb-3">
+                      Automate wellness checks, test reports, and future healthcare checkup bookings.
+                    </p>
+                    <span
+                      class="badge bg-slate-50 text-slate-500 px-3 py-1-5 rounded-pill border border-slate-200 font-mono text-xs fw-semibold">45%
+                      Return Rate</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- MOBILE TIMELINE DISPLAY -->
+            <div class="d-block d-lg-none timeline-vertical position-relative z-10 ms-1 mt-3">
+
+              <!-- Mobile 1 -->
               <div
-                class="col d-flex flex-column align-items-center text-center cursor-pointer timeline-node-btn active-node"
+                class="timeline-vertical-node mb-4 select-none cursor-pointer p-4 bg-white rounded-4 shadow-sm border border-teal-light active-v-node transition-all-3 hover-scale"
                 data-step="1">
                 <div
-                  class="node-circle z-10 w-14 h-14 rounded-circle border-2 flex items-center justify-center transition">
-                  <i data-lucide="search" class="font-20"></i>
+                  class="timeline-vertical-circle d-flex align-items-center justify-content-center border-0 shadow-md bg-white transition-all-3 z-10">
+                  <div
+                    class="active-pulse position-absolute w-100 h-100 rounded-circle animate-ping bg-teal opacity-25">
+                  </div>
+                  <i data-lucide="search" class="w-14 text-teal position-relative z-10"></i>
                 </div>
-                <p class="xxs-text uppercase fw-bold tracking-wider mt-3 node-channel-tag text-teal text-primary mb-1">
-                  Inbound</p>
-                <h6 class="font-heading fw-bold text-slate-800 xs-text mb-1">Patient Enquiry</h6>
-                <p class="text-slate-500 xxxs-text leading-relaxed mt-2 px-1 text-center long-desc-block">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <p class="xxs-text fw-bold text-teal tracking-widest text-uppercase mb-0 tag-v-channel">Inbound</p>
+                  <span
+                    class="badge bg-teal-light text-teal py-1 px-2 rounded-pill font-mono text-xs fw-bold shadow-sm">0
+                    sec Capture</span>
+                </div>
+                <h5 class="font-heading fw-extrabold text-slate-900 fs-6 mb-2">Patient Enquiry</h5>
+                <p class="text-slate-500 text-sm leading-relaxed mb-0">
                   Capture enquiries automatically from digital ads, phone, or offline channels.
                 </p>
-                <span class="badge border-slate bg-light text-slate px-2 py-0.5 mt-2 font-mono text-9 fw-semibold">0 sec
-                  Capture</span>
               </div>
 
-              <!-- Node 2 -->
-              <div class="col d-flex flex-column align-items-center text-center cursor-pointer timeline-node-btn"
+              <!-- Mobile 2 -->
+              <div
+                class="timeline-vertical-node mb-4 select-none cursor-pointer p-4 bg-white rounded-4 border border-slate-100 transition-all-3 hover-scale"
                 data-step="2">
                 <div
-                  class="node-circle z-10 w-14 h-14 rounded-circle border-2 flex items-center justify-center transition">
-                  <i data-lucide="message-square" class="font-20"></i>
+                  class="timeline-vertical-circle d-flex align-items-center justify-content-center border border-slate-200 bg-white transition-all-3 z-10">
+                  <div
+                    class="active-pulse position-absolute w-100 h-100 rounded-circle animate-ping bg-teal opacity-25">
+                  </div>
+                  <i data-lucide="message-square" class="w-14 text-slate-400"></i>
                 </div>
-                <p class="xxs-text uppercase fw-bold tracking-wider mt-3 node-channel-tag text-slate-400 mb-1">Instant
-                  Touch</p>
-                <h6 class="font-heading fw-bold text-slate-800 xs-text mb-1">Automated Follow-Up</h6>
-                <p class="text-slate-500 xxxs-text leading-relaxed mt-2 px-1 text-center long-desc-block">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <p class="xxs-text fw-bold text-slate-400 tracking-widest text-uppercase mb-0 tag-v-channel">Instant
+                    Touch</p>
+                  <span
+                    class="badge bg-slate-50 text-slate-500 py-1 px-2 rounded-pill border border-slate-200 font-mono text-xs fw-semibold">98%
+                    Open Rate</span>
+                </div>
+                <h5 class="font-heading fw-bold text-slate-700 fs-6 mb-2">Automated Follow-Up</h5>
+                <p class="text-slate-500 text-sm leading-relaxed mb-0">
                   Nurture with customized multi-channel templates via secure WhatsApp logs instantly.
                 </p>
-                <span class="badge border-slate bg-light text-slate px-2 py-0.5 mt-2 font-mono text-9 fw-semibold">98%
-                  Open Rate</span>
               </div>
 
-              <!-- Node 3 -->
-              <div class="col d-flex flex-column align-items-center text-center cursor-pointer timeline-node-btn"
+              <!-- Mobile 3 -->
+              <div
+                class="timeline-vertical-node mb-4 select-none cursor-pointer p-4 bg-white rounded-4 border border-slate-100 transition-all-3 hover-scale"
                 data-step="3">
                 <div
-                  class="node-circle z-10 w-14 h-14 rounded-circle border-2 flex items-center justify-center transition">
-                  <i data-lucide="calendar-check" class="font-20"></i>
+                  class="timeline-vertical-circle d-flex align-items-center justify-content-center border border-slate-200 bg-white transition-all-3 z-10">
+                  <div
+                    class="active-pulse position-absolute w-100 h-100 rounded-circle animate-ping bg-teal opacity-25">
+                  </div>
+                  <i data-lucide="calendar-check" class="w-14 text-slate-400"></i>
                 </div>
-                <p class="xxs-text uppercase fw-bold tracking-wider mt-3 node-channel-tag text-slate-400 mb-1">Fluid
-                  Booking</p>
-                <h6 class="font-heading fw-bold text-slate-800 xs-text mb-1">Appointment Booking</h6>
-                <p class="text-slate-500 xxxs-text leading-relaxed mt-2 px-1 text-center long-desc-block">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <p class="xxs-text fw-bold text-slate-400 tracking-widest text-uppercase mb-0 tag-v-channel">Fluid
+                    Booking</p>
+                  <span
+                    class="badge bg-slate-50 text-slate-500 py-1 px-2 rounded-pill border border-slate-200 font-mono text-xs fw-semibold">3x
+                    Conversions</span>
+                </div>
+                <h5 class="font-heading fw-bold text-slate-700 fs-6 mb-2">Appointment Booking</h5>
+                <p class="text-slate-500 text-sm leading-relaxed mb-0">
                   Seamless single-click appointment reservation without back-and-forth frontdesk calls.
                 </p>
-                <span class="badge border-slate bg-light text-slate px-2 py-0.5 mt-2 font-mono text-9 fw-semibold">3x
-                  Conversions</span>
               </div>
 
-              <!-- Node 4 -->
-              <div class="col d-flex flex-column align-items-center text-center cursor-pointer timeline-node-btn"
+              <!-- Mobile 4 -->
+              <div
+                class="timeline-vertical-node mb-4 select-none cursor-pointer p-4 bg-white rounded-4 border border-slate-100 transition-all-3 hover-scale"
                 data-step="4">
                 <div
-                  class="node-circle z-10 w-14 h-14 rounded-circle border-2 flex items-center justify-center transition">
-                  <i data-lucide="stethoscope" class="font-20"></i>
+                  class="timeline-vertical-circle d-flex align-items-center justify-content-center border border-slate-200 bg-white transition-all-3 z-10">
+                  <div
+                    class="active-pulse position-absolute w-100 h-100 rounded-circle animate-ping bg-teal opacity-25">
+                  </div>
+                  <i data-lucide="stethoscope" class="w-14 text-slate-400"></i>
                 </div>
-                <p class="xxs-text uppercase fw-bold tracking-wider mt-3 node-channel-tag text-slate-400 mb-1">Clinical
-                  Care</p>
-                <h6 class="font-heading fw-bold text-slate-800 xs-text mb-1">Consultation</h6>
-                <p class="text-slate-500 xxxs-text leading-relaxed mt-2 px-1 text-center long-desc-block">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <p class="xxs-text fw-bold text-slate-400 tracking-widest text-uppercase mb-0 tag-v-channel">Clinical
+                    Care</p>
+                  <span
+                    class="badge bg-slate-50 text-slate-500 py-1 px-2 rounded-pill border border-slate-200 font-mono text-xs fw-semibold">92%
+                    Show Rate</span>
+                </div>
+                <h5 class="font-heading fw-bold text-slate-700 fs-6 mb-2">Consultation</h5>
+                <p class="text-slate-500 text-sm leading-relaxed mb-0">
                   Patients attend scheduled sessions with pre-consultation medical intake briefs.
                 </p>
-                <span class="badge border-slate bg-light text-slate px-2 py-0.5 mt-2 font-mono text-9 fw-semibold">92%
-                  Show Rate</span>
               </div>
 
-              <!-- Node 5 -->
-              <div class="col d-flex flex-column align-items-center text-center cursor-pointer timeline-node-btn"
+              <!-- Mobile 5 -->
+              <div
+                class="timeline-vertical-node select-none cursor-pointer p-4 bg-white rounded-4 border border-slate-100 transition-all-3 hover-scale"
                 data-step="5">
                 <div
-                  class="node-circle z-10 w-14 h-14 rounded-circle border-2 flex items-center justify-center transition">
-                  <i data-lucide="heart" class="font-20"></i>
+                  class="timeline-vertical-circle d-flex align-items-center justify-content-center border border-slate-200 bg-white transition-all-3 z-10">
+                  <div
+                    class="active-pulse position-absolute w-100 h-100 rounded-circle animate-ping bg-teal opacity-25">
+                  </div>
+                  <i data-lucide="heart" class="w-14 text-slate-400"></i>
                 </div>
-                <p class="xxs-text uppercase fw-bold tracking-wider mt-3 node-channel-tag text-slate-400 mb-1">Care
-                  Continuity</p>
-                <h6 class="font-heading fw-bold text-slate-800 xs-text mb-1">Care Retention</h6>
-                <p class="text-slate-500 xxxs-text leading-relaxed mt-2 px-1 text-center long-desc-block">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <p class="xxs-text fw-bold text-slate-400 tracking-widest text-uppercase mb-0 tag-v-channel">Care
+                    Continuity</p>
+                  <span
+                    class="badge bg-slate-50 text-slate-500 py-1 px-2 rounded-pill border border-slate-200 font-mono text-xs fw-semibold">45%
+                    Return Rate</span>
+                </div>
+                <h5 class="font-heading fw-bold text-slate-700 fs-6 mb-2">Care Retention</h5>
+                <p class="text-slate-500 text-sm leading-relaxed mb-0">
                   Automate wellness checks, test reports, and future healthcare checkup bookings.
                 </p>
-                <span class="badge border-slate bg-light text-slate px-2 py-0.5 mt-2 font-mono text-9 fw-semibold">45%
-                  Return Rate</span>
               </div>
 
             </div>
           </div>
-
-          <!-- MOBILE TIMELINE DISPLAY -->
-          <div class="d-block d-lg-none timeline-vertical">
-
-            <!-- Mobile 1 -->
-            <div class="timeline-vertical-node mb-4 select-none cursor-pointer p-2 active-v-node" data-step="1">
-              <div
-                class="timeline-vertical-circle d-flex align-items-center justify-content-center border-2 bg-white transition">
-                <i data-lucide="search" class="w-14"></i>
-              </div>
-              <div class="d-flex align-items-center flex-wrap gap-2">
-                <h5 class="font-heading fw-bold text-slate-900 small mb-0">Patient Enquiry</h5>
-                <span class="badge bg-light text-muted border border-slate-200 py-0.5 px-2 font-mono max-text">0 sec
-                  Capture</span>
-              </div>
-              <p class="xs-text fw-bold text-primary tracking-wide text-uppercase mb-0 mt-1 tag-v-channel">Inbound</p>
-              <p class="text-slate-500 xs-text leading-relaxed mt-2 mb-0">
-                Capture enquiries automatically from digital ads, phone, or offline channels.
-              </p>
-            </div>
-
-            <!-- Mobile 2 -->
-            <div class="timeline-vertical-node mb-4 select-none cursor-pointer p-2" data-step="2">
-              <div
-                class="timeline-vertical-circle d-flex align-items-center justify-content-center border-2 bg-white transition">
-                <i data-lucide="message-square" class="w-14"></i>
-              </div>
-              <div class="d-flex align-items-center flex-wrap gap-2">
-                <h5 class="font-heading fw-bold text-slate-900 small mb-0">Automated Follow-Up</h5>
-                <span class="badge bg-light text-muted border border-slate-200 py-0.5 px-2 font-mono max-text">98% Open
-                  Rate</span>
-              </div>
-              <p class="xs-text fw-bold text-slate-400 tracking-wide text-uppercase mb-0 mt-1 tag-v-channel">Instant
-                Touch</p>
-              <p class="text-slate-500 xs-text leading-relaxed mt-2 mb-0">
-                Nurture with customized multi-channel templates via secure WhatsApp logs instantly.
-              </p>
-            </div>
-
-            <!-- Mobile 3 -->
-            <div class="timeline-vertical-node mb-4 select-none cursor-pointer p-2" data-step="3">
-              <div
-                class="timeline-vertical-circle d-flex align-items-center justify-content-center border-2 bg-white transition">
-                <i data-lucide="calendar-check" class="w-14"></i>
-              </div>
-              <div class="d-flex align-items-center flex-wrap gap-2">
-                <h5 class="font-heading fw-bold text-slate-900 small mb-0">Appointment Booking</h5>
-                <span class="badge bg-light text-muted border border-slate-200 py-0.5 px-2 font-mono max-text">3x
-                  Conversions</span>
-              </div>
-              <p class="xs-text fw-bold text-slate-400 tracking-wide text-uppercase mb-0 mt-1 tag-v-channel">Fluid
-                Booking</p>
-              <p class="text-slate-500 xs-text leading-relaxed mt-2 mb-0">
-                Seamless single-click appointment reservation without back-and-forth frontdesk calls.
-              </p>
-            </div>
-
-            <!-- Mobile 4 -->
-            <div class="timeline-vertical-node mb-4 select-none cursor-pointer p-2" data-step="4">
-              <div
-                class="timeline-vertical-circle d-flex align-items-center justify-content-center border-2 bg-white transition">
-                <i data-lucide="stethoscope" class="w-14"></i>
-              </div>
-              <div class="d-flex align-items-center flex-wrap gap-2">
-                <h5 class="font-heading fw-bold text-slate-900 small mb-0">Consultation</h5>
-                <span class="badge bg-light text-muted border border-slate-200 py-0.5 px-2 font-mono max-text">92% Show
-                  Rate</span>
-              </div>
-              <p class="xs-text fw-bold text-slate-400 tracking-wide text-uppercase mb-0 mt-1 tag-v-channel">Clinical
-                Care</p>
-              <p class="text-slate-500 xs-text leading-relaxed mt-2 mb-0">
-                Patients attend scheduled sessions with pre-consultation medical intake briefs.
-              </p>
-            </div>
-
-            <!-- Mobile 5 -->
-            <div class="timeline-vertical-node select-none cursor-pointer p-2" data-step="5">
-              <div
-                class="timeline-vertical-circle d-flex align-items-center justify-content-center border-2 bg-white transition">
-                <i data-lucide="heart" class="w-14"></i>
-              </div>
-              <div class="d-flex align-items-center flex-wrap gap-2">
-                <h5 class="font-heading fw-bold text-slate-900 small mb-0">Care Retention</h5>
-                <span class="badge bg-light text-muted border border-slate-200 py-0.5 px-2 font-mono max-text">45%
-                  Return Rate</span>
-              </div>
-              <p class="xs-text fw-bold text-slate-400 tracking-wide text-uppercase mb-0 mt-1 tag-v-channel">Care
-                Continuity</p>
-              <p class="text-slate-500 xs-text leading-relaxed mt-2 mb-0">
-                Automate wellness checks, test reports, and future healthcare checkup bookings.
-              </p>
-            </div>
-
-          </div>
-
         </div>
 
       </div>
@@ -885,11 +962,11 @@
                 <img src="assets/lp-cust/vcare.png" alt="AIMS">
               </div>
 
-              
+
 
               <!-- Duplicate for infinite loop -->
               <!-- Set 1 -->
-               <div class="logo-card">
+              <div class="logo-card">
                 <img src="assets/lp-cust/aastrika.jpg" alt="Godrej">
               </div>
 
@@ -1163,116 +1240,7 @@
               <div id="form-container" class="z-10 position-relative text-start">
                 <form id="lead-generation-form" class="row g-3">
 
-                  <!-- Full Name -->
-                  <div class="col-12 col-sm-6 d-flex flex-column">
-                    <label class="text-xs fw-semibold text-slate-700 label-g">Full Name *</label>
-                    <input type="text" name="fullName" id="fullName" placeholder="e.g. Dr. Satish Nair"
-                      class="custom-form-control-bs w-100" />
-                    <span id="err-fullName" class="text-red xxs-text fw-medium mt-1 d-none">Full Name is required</span>
-                  </div>
 
-                  <!-- Business Email -->
-                  <div class="col-12 col-sm-6 d-flex flex-column">
-                    <label class="text-xs fw-semibold text-slate-700 label-g">Business Email *</label>
-                    <input type="email" name="businessEmail" id="businessEmail" placeholder="satish@hospital.com"
-                      class="custom-form-control-bs w-100" />
-                    <span id="err-businessEmail" class="text-red xxs-text fw-medium mt-1 d-none">Business Email is
-                      required</span>
-                  </div>
-
-                  <!-- Hospital Name -->
-                  <div class="col-12 col-sm-6 d-flex flex-column">
-                    <label class="text-xs fw-semibold text-slate-700 label-g">Hospital / Clinic Name *</label>
-                    <input type="text" name="orgName" id="orgName" placeholder="Apollo Grace Clinics"
-                      class="custom-form-control-bs w-100" />
-                    <span id="err-orgName" class="text-red xxs-text fw-medium mt-1 d-none">Hospital or clinic name is
-                      required</span>
-                  </div>
-
-                  <!-- Website URL -->
-                  <div class="col-12 col-sm-6 d-flex flex-column">
-                    <label class="text-xs fw-semibold text-slate-700 label-g">Website URL *</label>
-                    <input type="text" name="websiteUrl" id="websiteUrl" placeholder="www.graceclinics.com"
-                      class="custom-form-control-bs w-100" />
-                    <span id="err-websiteUrl" class="text-red xxs-text fw-medium mt-1 d-none">Website URL is
-                      required</span>
-                  </div>
-
-                  <!-- Healthcare Segment -->
-                  <div class="col-12 col-sm-6 d-flex flex-column">
-                    <label class="text-xs fw-semibold text-slate-700 label-g">Healthcare Segment *</label>
-                    <select name="segment" id="segment" class="custom-form-control-bs select-custom w-100">
-                      <option value="" selected disabled>Select Segment</option>
-                      <option value="Hospital">Hospital</option>
-                      <option value="Multi-Speciality Clinic">Multi-Speciality Clinic</option>
-                      <option value="Dental Clinic">Dental Clinic</option>
-                      <option value="IVF & Fertility Center">IVF & Fertility Center</option>
-                      <option value="Diagnostic Center">Diagnostic Center</option>
-                      <option value="Other">Other</option>
-                    </select>
-                    <span id="err-segment" class="text-red xxs-text fw-medium mt-1 d-none">Healthcare segment is
-                      required</span>
-                  </div>
-
-                  <!-- Locations -->
-                  <div class="col-12 col-sm-6 d-flex flex-column">
-                    <label class="text-xs fw-semibold text-slate-700 label-g">Number of Locations *</label>
-                    <select name="locations" id="locations" class="custom-form-control-bs select-custom w-100">
-                      <option value="" selected disabled>Select Locations</option>
-                      <option value="1">Single Location</option>
-                      <option value="2-5">2 to 5 Locations</option>
-                      <option value="6-10">6 to 10 Locations</option>
-                      <option value="10+">10+ Locations</option>
-                    </select>
-                    <span id="err-locations" class="text-red xxs-text fw-medium mt-1 d-none">Number of locations is
-                      required</span>
-                  </div>
-
-                  <!-- Marketing Spend -->
-                  <div class="col-12 d-flex flex-column">
-                    <label class="text-xs fw-semibold text-slate-700 label-g">Marketing Spend *</label>
-                    <select name="marketingSpend" id="marketingSpend"
-                      class="custom-form-control-bs select-custom w-100">
-                      <option value="" selected disabled>Select Spend / Mo</option>
-                      <option value="Less than 1 Lakh">Less than ₹1 Lakh</option>
-                      <option value="1-5 Lakhs">₹1 Lakh - ₹5 Lakhs</option>
-                      <option value="5-10 Lakhs">₹5 Lakhs - ₹10 Lakhs</option>
-                      <option value="10+ Lakhs">₹10 Lakhs +</option>
-                    </select>
-                    <span id="err-marketingSpend" class="text-red xxs-text fw-medium mt-1 d-none">Marketing spend is
-                      required</span>
-                  </div>
-
-                  <!-- Biggest Challenge -->
-                  <div class="col-12 d-flex flex-column">
-                    <label class="text-xs fw-semibold text-slate-700 label-g">Biggest Challenge *</label>
-                    <textarea name="biggestChallenge" id="biggestChallenge" rows="3"
-                      placeholder="e.g. Frontdesk is missing incoming WhatsApp enquiries, resulting in lost bookings."
-                      class="custom-form-control-bs textarea-custom w-100"></textarea>
-                    <span id="err-biggestChallenge" class="text-red xxs-text fw-medium mt-1 d-none">Please describe your
-                      biggest challenge</span>
-                  </div>
-
-                  <!-- Submit button -->
-                  <div class="col-12 text-start mt-4">
-                    <button type="submit" id="submit-btn"
-                      class="btn btn-premium w-100 py-3 shadow hover-scale d-inline-flex align-items-center justify-content-center gap-2 cursor-pointer">
-                      <span id="btn-text">Book My Consultation</span>
-                      <i id="btn-icon" data-lucide="arrow-right" class="font-20"></i>
-                    </button>
-                  </div>
-
-                  <!-- Footer security badges -->
-                  <div
-                    class="d-flex align-items-center justify-content-center gap-4 col-12 mt-4 pt-3 border-top border-slate-100 text-center select-none">
-                    <div class="d-flex align-items-center gap-2 text-slate-400 xs-text">
-                      <i data-lucide="shield" class="text-teal w-14"></i> End-to-End Encryption
-                    </div>
-                    <div class="bullet-dot bg-slate-300"></div>
-                    <div class="d-flex align-items-center gap-2 text-slate-400 xs-text">
-                      <i data-lucide="sparkles" class="text-teal w-14"></i> Privacy Guaranteed
-                    </div>
-                  </div>
 
                 </form>
               </div>
@@ -1499,18 +1467,13 @@
       <div class="logo-footer d-flex align-items-center gap-2 select-none cursor-pointer"
         onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
         <img src="assets/images/logo.png" alt="Plumb5 Logo"
-          style="height: 24px; width: auto; filter: brightness(0) invert(1);" />
+          style="height: 32px; width: auto; filter: brightness(0) invert(1);" />
       </div>
 
       <!-- Informative copyright -->
-      <p class="xs-text text-stone-400 mb-0 text-white-70">
-        &copy; 2026 Plumb5. All rights reserved. Managed under HIPAA-friendly enterprise data security guidelines.
+      <p class="xs-text text-white mb-0" style="color: #ffffff !important;">
+        &copy; 2026. All Rights Reserved by Decisive Analytical Systems Pvt. Ltd.
       </p>
-
-      <!-- Portal status banner -->
-      <!-- <p class="font-mono text-9 tracking-widest uppercase text-slate-400 mb-0">
-        SECURE PORTAL IP://3000
-      </p> -->
 
     </div>
   </footer>
