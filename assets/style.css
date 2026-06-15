@@ -2171,7 +2171,7 @@ i[data-lucide] svg {
   font-size: clamp(2.4rem, 4vw, 4rem);
   line-height: 1.15;
   letter-spacing: -0.02em;
-  margin-bottom: 1.5rem !important;
+  margin-bottom: 1rem !important;
   max-width: 650px;
   color: #ffffff;
   font-weight: 800;
@@ -2194,7 +2194,6 @@ i[data-lucide] svg {
   color: rgba(255, 255, 255, 0.85);
   max-width: 580px;
   line-height: 1.8;
-  margin-bottom: 2.5rem !important;
   font-weight: 400;
   letter-spacing: 0.015em;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
