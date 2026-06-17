@@ -2578,15 +2578,18 @@ i[data-lucide] svg {
   .hero-cards-container {
     flex-direction: row !important;
     flex-wrap: wrap;
-    gap: 8px;
+    justify-content: center !important;
+    gap: 12px;
+    margin-top: 24px;
   }
 
   .premium-glass-card {
-    width: calc(50% - 4px) !important;
+    width: calc(50% - 6px) !important;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 12px;
-    gap: 6px;
+    align-items: center;
+    text-align: center;
+    padding: 16px 12px;
+    gap: 8px;
   }
 
   /* On very small: only 1 card per row — the 3 stack vertically */
@@ -2903,187 +2906,17 @@ i[data-lucide] svg {
 
 /* ---  PLUMB5 FORM STYLING --- */
 
-/* 1. Form Container & Glassmorphism Card */
-#form-container {
-  width: 100%;
-  max-width: 100%;
-  position: relative;
-  overflow: hidden;
-  box-sizing: border-box;
-  padding: clamp(24px, 4vw, 48px);
-  border-radius: 24px;
-
-}
-
-/* Base protection for Plumb5 injection */
-#dvPlumb5InPageScript3189,
-#dvPlumb5InPageScript3189 * {
+.form-placewrap {
+  width: 85%;
+  background-color: #fdfdfd;
+  border-radius: 15px;
+  padding: 20px;
   box-sizing: border-box;
 }
 
-#dvPlumb5InPageScript3189 {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-/* 2. Form Grid & Spacing */
-#lead-generation-form {
-  margin: 0;
-  width: 100%;
-}
-
-/* 3. Form Typography & Labels */
-#dvPlumb5InPageScript3189 label,
-#dvPlumb5InPageScript3189 .frmlabel {
-  display: block;
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  color: #334155;
-  /* slate-700 */
-  margin-bottom: 8px;
-  letter-spacing: 0.01em;
-}
-
-/* 4. Inputs, Selects, Textareas */
-#dvPlumb5InPageScript3189 input[type="text"],
-#dvPlumb5InPageScript3189 input[type="email"],
-#dvPlumb5InPageScript3189 input[type="tel"],
-#dvPlumb5InPageScript3189 input[type="number"],
-#dvPlumb5InPageScript3189 select,
-#dvPlumb5InPageScript3189 textarea,
-#dvPlumb5InPageScript3189 .frminput {
-  width: 100%;
-  max-width: 100%;
-  background-color: #f8fafc;
-  /* slate-50 */
-  border: 1px solid #e2e8f0;
-  /* slate-200 */
-  border-radius: 12px;
-  padding: 14px 16px;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  color: #0f172a;
-  /* slate-900 */
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02);
-  margin-bottom: clamp(16px, 3vw, 24px);
-}
-
-/* Placeholder styling */
-#dvPlumb5InPageScript3189 input::placeholder,
-#dvPlumb5InPageScript3189 textarea::placeholder,
-#dvPlumb5InPageScript3189 .frminput::placeholder {
-  color: #94a3b8;
-  /* slate-400 */
-  font-weight: 400;
-}
-
-/* Focus states */
-#dvPlumb5InPageScript3189 input:focus,
-#dvPlumb5InPageScript3189 select:focus,
-#dvPlumb5InPageScript3189 textarea:focus,
-#dvPlumb5InPageScript3189 .frminput:focus {
-  outline: none;
-  background-color: #ffffff;
-  border-color: #0ea5a4;
-  /* Teal primary */
-  box-shadow: 0 0 0 4px rgba(14, 165, 164, 0.15), inset 0 1px 2px rgba(0, 0, 0, 0.02);
-}
-
-/* Hover states */
-#dvPlumb5InPageScript3189 input:hover:not(:focus),
-#dvPlumb5InPageScript3189 select:hover:not(:focus),
-#dvPlumb5InPageScript3189 textarea:hover:not(:focus),
-#dvPlumb5InPageScript3189 .frminput:hover:not(:focus) {
-  border-color: #cbd5e1;
-  /* slate-300 */
-  background-color: #f1f5f9;
-  /* slate-100 */
-}
-
-/* 5. Custom Select Arrow styling */
-#dvPlumb5InPageScript3189 select {
-  appearance: none;
-  background-repeat: no-repeat;
-  background-position: right 16px center;
-  padding-right: 40px;
-}
-
-/* 6. High-Converting Submit Button */
-#dvPlumb5InPageScript3189 input[type="submit"],
-#dvPlumb5InPageScript3189 input[type="button"],
-#dvPlumb5InPageScript3189 button[type="submit"],
-#dvPlumb5InPageScript3189 button[type="button"],
-#dvPlumb5InPageScript3189 .frmbtn {
-  width: 100%;
-  min-height: 56px;
-  background: linear-gradient(135deg, #0ea5a4 0%, #14b8a6 100%);
-  color: #ffffff;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  letter-spacing: 0.02em;
-  border: none;
-  border-radius: 12px;
-  padding: 0 24px;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 8px 16px -4px rgba(14, 165, 164, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: clamp(8px, 2vw, 16px);
-  -webkit-appearance: none;
-}
-
-#dvPlumb5InPageScript3189 input[type="submit"]:hover,
-#dvPlumb5InPageScript3189 input[type="button"]:hover,
-#dvPlumb5InPageScript3189 button:hover,
-#dvPlumb5InPageScript3189 .frmbtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 20px -4px rgba(14, 165, 164, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  background: linear-gradient(135deg, #0d9493 0%, #11a393 100%);
-}
-
-#dvPlumb5InPageScript3189 input[type="submit"]:active,
-#dvPlumb5InPageScript3189 input[type="button"]:active,
-#dvPlumb5InPageScript3189 button:active,
-#dvPlumb5InPageScript3189 .frmbtn:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 8px -2px rgba(14, 165, 164, 0.4);
-}
-
-/* 7. Error Messages & Validation */
-#dvPlumb5InPageScript3189 .error,
-#dvPlumb5InPageScript3189 span.err,
-#dvPlumb5InPageScript3189 [class*="error"],
-#dvPlumb5InPageScript3189 .frmerror {
-  color: #ef4444;
-  /* red-500 */
-  font-size: 12px;
-  font-weight: 500;
-  margin-top: -12px;
-  margin-bottom: 16px;
-  display: block;
-}
-
-/* Iframe and Images protection within form */
-#dvPlumb5InPageScript3189 iframe,
-#dvPlumb5InPageScript3189 img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Responsive Overrides */
-@media (max-width: 768px) {
-
-  #dvPlumb5InPageScript3189 input[type="submit"],
-  #dvPlumb5InPageScript3189 input[type="button"],
-  #dvPlumb5InPageScript3189 button,
-  #dvPlumb5InPageScript3189 .frmbtn {
-    min-height: 56px;
-    font-size: 15px;
+@media only screen and (max-width:767px) {
+  .form-placewrap {
+    background-color: #b2efed;
+    width: 100%;
   }
 }
